@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-  
-  
+    
+  code - 
   
   </title>
   
@@ -101,25 +101,65 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="14882686442912.html">
+                <a class="clearlink" href="14882669814482.html">
                 
-                  <h1>module.exports浅析</h1>
+                  <h1>webpack入坑记录</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<p>在开发一个复杂的应用程序的时候，我们需要把各个功能拆分、封装到不同的文件，在需要的时候引用该文件。没人会写一个几万行代码的文件，这样在可读性、复用性和维护性上都很差，几乎所有的编程语言都有自己的模块组织方式，比如Java中的包、C#中的程序集等，node.js使用模块和包来组织，其机制实现参照了CommonJS标准，虽未完全遵守，但差距不大，使用起来非常简单。</p>
+                        	<p>Webpack 会分析入口文件，解析包含依赖关系的各个文件。这些文件（模块）都打包到 bundle.js 。Webpack 会给每个模块分配一个唯一的 id 并通过这个 id 索引和访问模块。在页面启动时，会先执行 entry.js 中的代码，其它模块会在运行 require 的时候再执行。</p>
 
-<h3 id="toc_0">什么是模块？</h3>
+<h3 id="toc_0">Loader</h3>
 
-<p>在node.js中模块与文件是一一对应的，也就是说一个node.js文件就是一个模块，文件内容可能是我们封装好的一些JavaScript方法、JSON数据、编译过的C/C++拓展等，在关于node.js的误会提到过node.js的架构。<br/>
-其中http、fs、net等都是node.js提供的核心模块，使用C/C++实现，外部用JavaScript封装。</p>
+<p>Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件，就需要使用 loader 进行转换。</p>
 
-<h3 id="toc_1">创建、加载模块</h3>
+<p>Loader 可以理解为是模块和资源的转换器，它本身是一个函数，接受源文件作为参数，返回转换的结果。这样，我们就可以通过 require 来加载任何类型的模块或文件，比如 CoffeeScript、 JSX、 LESS 或图片。</p>
 
-<p>模块在node.js中的概念很简单，看看如何创建一个我们自己的模块供开发复用。</p>
+<p><strong>loader 有哪些特性？</strong><br/>
+Loader 可以通过管道方式链式调用，每个 loader 可以把资源转换成任意格式并传递给下一个 loader ，但是最后一个 loader 必须返回 JavaScript。<br/>
+Loader 可以同步或异步执行。<br/>
+Loader 运行在 node.js 环境中，所以可以做任何可能的事情。<br/>
+Loader 可以接受参数，以此来传递配置项给 loader。<br/>
+Loader 可以通过文件扩展名（或正则表达式）绑定给不同类型的文件。<br/>
+Loader 可以通过 npm 发布和安装。<br/>
+除了通过 package.json 的 main 指定，通常的模块也可以导出一个 loader 来使用。<br/>
+Loader 可以访问配置。<br/>
+插件可以让 loader 拥有更多特性。<br/>
+Loader 可以分发出附加的任意文件。<br/>
+Loader 本身也是运行在 node.js 环境中的 JavaScript 模块，它通常会返回一个函数。大多数情况下，我们通过 npm 来管理 loader，但是你也可以在项目中自己写 loader 模块。<br/>
+Loader 可以在 require() 引用模块的时候添加，也可以在 webpack 全局配置中进行绑定，还可以通过命令行的方式使用。</p>
 
-<p>在node.js中创建模块非常简单，一个文件就是一个模块，所以我们创建一个test.js文件就创建了一个模块</p>
+<h3 id="toc_1">配置文件</h3>
+
+<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 --config 选项来指定配置文件。<br/>
+<code><br/>
+{<br/>
+  &quot;name&quot;: &quot;webpack-example&quot;,<br/>
+  &quot;version&quot;: &quot;1.0.0&quot;,<br/>
+  &quot;description&quot;: &quot;A simple webpack example.&quot;,<br/>
+  &quot;main&quot;: &quot;bundle.js&quot;,<br/>
+  &quot;scripts&quot;: {<br/>
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;<br/>
+  },<br/>
+  &quot;keywords&quot;: [<br/>
+    &quot;webpack&quot;<br/>
+  ],<br/>
+  &quot;author&quot;: &quot;zhaoda&quot;,<br/>
+  &quot;license&quot;: &quot;MIT&quot;,<br/>
+  &quot;devDependencies&quot;: {<br/>
+    &quot;css-loader&quot;: &quot;^0.21.0&quot;,<br/>
+    &quot;style-loader&quot;: &quot;^0.13.0&quot;,<br/>
+    &quot;webpack&quot;: &quot;^1.12.2&quot;<br/>
+  }<br/>
+}<br/>
+</code></p>
+
+<h3 id="toc_2">commonJS规范</h3>
+
+<p>CommonJS规范包括了模块（modules）、包（packages）、系统（system）、二进制（binary）、控制台（console）、编码（encodings）、文件系统（filesystems）、套接字（sockets）、单元测试（unit testing）等部分。目前大部分标准都在拟定和讨论之中，已经发布的标准有Modules/1.0、Modules/1.1、Modules/1.1.1、Packages/1.0、System/1.0。</p>
+
+<h3 id="toc_3">AMD规范</h3>
 
                         
                       </div>
@@ -150,12 +190,12 @@
 			<div class="row">
 			  <div class="large-6 columns">
 			  <p class="text-left" style="padding-top:25px;">
-			   
+			   <a href="code.html">&laquo; Prev Page</a>  
 			  </p>
 			  </div>
 			  <div class="large-6 columns">
 			<p class="text-right" style="padding-top:25px;">
-			 <a href="all_1.html">&raquo; Next Page</a> 
+			 <a href="code_2.html">&raquo; Next Page</a> 
 			</p>
 			  </div>
 			</div>
