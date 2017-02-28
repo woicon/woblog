@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  webpack入坑记录 - 
+  git的远程操作 - 
   
   </title>
   
@@ -101,10 +101,10 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>webpack入坑记录</h1>
+          <h1>git的远程操作</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2017/2/28</span>
+          <span class="date">2015/1/28</span>
 
           <span>posted in&nbsp;</span> 
           
@@ -121,59 +121,21 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>Webpack 会分析入口文件，解析包含依赖关系的各个文件。这些文件（模块）都打包到 bundle.js 。Webpack 会给每个模块分配一个唯一的 id 并通过这个 id 索引和访问模块。在页面启动时，会先执行 entry.js 中的代码，其它模块会在运行 require 的时候再执行。<br/>
-&lt;!-- more --&gt;</p>
-
-<h3 id="toc_0">Loader</h3>
-
-<p>Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件，就需要使用 loader 进行转换。</p>
-
-<p>Loader 可以理解为是模块和资源的转换器，它本身是一个函数，接受源文件作为参数，返回转换的结果。这样，我们就可以通过 require 来加载任何类型的模块或文件，比如 CoffeeScript、 JSX、 LESS 或图片。</p>
-
-<p><strong>loader 有哪些特性？</strong><br/>
-Loader 可以通过管道方式链式调用，每个 loader 可以把资源转换成任意格式并传递给下一个 loader ，但是最后一个 loader 必须返回 JavaScript。<br/>
-Loader 可以同步或异步执行。<br/>
-Loader 运行在 node.js 环境中，所以可以做任何可能的事情。<br/>
-Loader 可以接受参数，以此来传递配置项给 loader。<br/>
-Loader 可以通过文件扩展名（或正则表达式）绑定给不同类型的文件。<br/>
-Loader 可以通过 npm 发布和安装。<br/>
-除了通过 package.json 的 main 指定，通常的模块也可以导出一个 loader 来使用。<br/>
-Loader 可以访问配置。<br/>
-插件可以让 loader 拥有更多特性。<br/>
-Loader 可以分发出附加的任意文件。<br/>
-Loader 本身也是运行在 node.js 环境中的 JavaScript 模块，它通常会返回一个函数。大多数情况下，我们通过 npm 来管理 loader，但是你也可以在项目中自己写 loader 模块。<br/>
-Loader 可以在 require() 引用模块的时候添加，也可以在 webpack 全局配置中进行绑定，还可以通过命令行的方式使用。</p>
-
-<h3 id="toc_1">配置文件</h3>
-
-<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 --config 选项来指定配置文件。<br/>
+      <p><strong><em>git查看分支</em></strong><br/>
+git查看本地分支，带星号的为当前开发的分支。<br/>
 <code><br/>
-{<br/>
-  &quot;name&quot;: &quot;webpack-example&quot;,<br/>
-  &quot;version&quot;: &quot;1.0.0&quot;,<br/>
-  &quot;description&quot;: &quot;A simple webpack example.&quot;,<br/>
-  &quot;main&quot;: &quot;bundle.js&quot;,<br/>
-  &quot;scripts&quot;: {<br/>
-    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;<br/>
-  },<br/>
-  &quot;keywords&quot;: [<br/>
-    &quot;webpack&quot;<br/>
-  ],<br/>
-  &quot;author&quot;: &quot;zhaoda&quot;,<br/>
-  &quot;license&quot;: &quot;MIT&quot;,<br/>
-  &quot;devDependencies&quot;: {<br/>
-    &quot;css-loader&quot;: &quot;^0.21.0&quot;,<br/>
-    &quot;style-loader&quot;: &quot;^0.13.0&quot;,<br/>
-    &quot;webpack&quot;: &quot;^1.12.2&quot;<br/>
-  }<br/>
-}<br/>
-</code></p>
+$git branch<br/>
+  master<br/>
+* newblog<br/>
+</code><br/>
+<strong><em>git切换分支</em></strong></p>
 
-<h3 id="toc_2">commonJS规范</h3>
-
-<p>CommonJS规范包括了模块（modules）、包（packages）、系统（system）、二进制（binary）、控制台（console）、编码（encodings）、文件系统（filesystems）、套接字（sockets）、单元测试（unit testing）等部分。目前大部分标准都在拟定和讨论之中，已经发布的标准有Modules/1.0、Modules/1.1、Modules/1.1.1、Packages/1.0、System/1.0。</p>
-
-<h3 id="toc_3">AMD规范</h3>
+<pre><code>git clone
+git remote
+git fetch
+git pull
+git push
+</code></pre>
 
 
     
@@ -184,16 +146,13 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14882686442912.html" 
-          title="Previous Post: module.exports浅析">&laquo; module.exports浅析</a>
+          <a href="14882669616759.html" 
+          title="Previous Post: 微信小程序中使用字体图标">&laquo; 微信小程序中使用字体图标</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
-      
-          <a  href="14882669616759.html" 
-          title="Next Post: 微信小程序中使用字体图标">微信小程序中使用字体图标 &raquo;</a>
       
       </p>
         </div>
