@@ -434,8 +434,6 @@ padding: 8px 0px; margin: 0;
   margin-top: 1rem;
   margin-bottom: 16px;
   font-weight: bold;
-    /* chinese */
-font-family: "PT Sans", "SF UI Display", ".PingFang SC","PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", sans-serif;
 
 }
 
@@ -728,7 +726,7 @@ font-family: "PT Sans", "SF UI Display", ".PingFang SC","PingFang SC", "Neue Haa
 }
 #main-content .markdown-body .article .read-more a{color: #57ad68; }
 #main-content .markdown-body .article .f-img{ padding-bottom: 16px;}
-#main-content .markdown-body .article .posted-in{ padding-left: 2px; font-style: italic; padding-right: 2px;}
+#main-content .markdown-body .article .posted-in{ padding-left: 2px;padding-right: 2px;}
 #main-content .markdown-body .article .a-content-img{float: left; padding-right: 12px; padding-bottom: 12px;}
 #main-content .markdown-body .article .a-content-img img{ width: 150px;}
 #main-content .markdown-body .article .read-more .comments a{color: #bababa; text-decoration: none;}
