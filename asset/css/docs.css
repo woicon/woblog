@@ -1,3 +1,6 @@
+body{
+	font-family:sans-serif !important;
+}
 .move-right .exit-off-canvas{
 	box-shadow: none;
 	background-color: rgba(255,255,255,0.2);
@@ -27,7 +30,6 @@
     text-transform: uppercase;
 
    margin:0; 
-  font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
   letter-spacing: .1rem;
   padding: 28px 0 0px 0;
   overflow: hidden;
@@ -78,14 +80,12 @@
 .side-item .side-header h2{margin: 0; padding: 0; padding-top: 14px; position: absolute; top: -1px; border-top:solid 1px #868686;
   font-size: 12px;
  text-transform: uppercase;
-  font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
   letter-spacing: .1rem;
   line-height: 1rem;
 font-weight: 700;
    }
 #site-info h1{ margin:0; padding:0; padding-top: 25px; font-size: 15px;
  text-transform: uppercase;
-  font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
   letter-spacing: .1rem;color: #444;
   line-height: 1rem;
 font-weight: bold; text-align: center;}
@@ -103,7 +103,6 @@ padding: 8px 0px; margin: 0;
   display: inline-block;
   color: rgba(0,0,0,0.6);
     background: rgba(255,255,255,0.97);
-    font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
     letter-spacing: -0.02rem;
     font-weight: 400;
     font-style: normal;
@@ -725,7 +724,7 @@ font-family: "PT Sans", "SF UI Display", ".PingFang SC","PingFang SC", "Neue Haa
 #main-content .markdown-body .article:first-child{padding-top: 20px;}
 #main-content .markdown-body .a-content{padding-bottom: 20px; padding-left: 2px; line-height: 1.6rem;}
 
-#main-content .markdown-body .article .read-more{padding-left: 2px; color: #bababa; font-size: 14px;font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+#main-content .markdown-body .article .read-more{padding-left: 2px; color: #bababa; font-size: 14px;
 }
 #main-content .markdown-body .article .read-more a{color: #57ad68; }
 #main-content .markdown-body .article .f-img{ padding-bottom: 16px;}
@@ -756,7 +755,7 @@ font-family: "PT Sans", "SF UI Display", ".PingFang SC","PingFang SC", "Neue Haa
 #single-page-wrap>h1,#archives-page-wrap>h1{ margin: 0; padding: 34px 0px; padding-bottom: 0; text-align: center;}
 
 
-#archives-page-wrap .archives-wrap>h1{font-family: "PT Sans","jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif; font-size: 30px; color: #999; padding-top: 20px;}
+#archives-page-wrap .archives-wrap>h1{font-size: 30px; color: #999; padding-top: 20px;}
 #archives-page-wrap .archives-wrap>h1:first-child{padding-top: 0;}
 #archives-page-wrap{ max-width: 640px;}
 
