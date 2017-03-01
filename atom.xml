@@ -4,7 +4,7 @@
   <title><![CDATA[woiconBlog]]></title>
   <link href="/atom.xml/atom.xml" rel="self"/>
   <link href="/atom.xml/"/>
-  <updated>2017-03-01T15:30:42+08:00</updated>
+  <updated>2017-03-01T15:35:50+08:00</updated>
   <id>/atom.xml/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -134,25 +134,27 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetyp
 <p><strong><em>git查看分支</em></strong><br/>
 git查看本地分支，带星号的为当前开发的分支。</p>
 
-<pre><code>$git branch -a //查看所有分支
-  master
-* newblog
-</code></pre>
-
-<p><strong><em>git新建分支</em></strong><br/>
-<code>$git checkout newbranch //切换分支<br/>
+<p><code><br/>
+$git branch -a //查看所有分支<br/>
+  master<br/>
+* newblog<br/>
 </code><br/>
-<strong><em>git删除分支</em></strong><br/>
-删除远程分支<br/>
+<strong>git新建分支</strong><br/>
+<code>$git checkout newbranch<br/>
+//切换分支<br/>
+</code><br/>
+<strong>git删除分支</strong></p>
+
+<p>删除远程分支<br/>
 <code>$git push origin :master;//删除远程master分支</code><br/>
 删除本地分支<br/>
 <code>$git branch -D newbranch;//删除本地master分支<br/>
 </code><br/>
-<strong><em>git切换分支</em></strong><br/>
-<code>git clone <br/>
-git remote <br/>
-git fetch <br/>
-git pull <br/>
+<strong>git切换分支</strong><br/>
+<code>git clone<br/>
+git remote<br/>
+git fetch<br/>
+git pull<br/>
 git push</code></p>
 
 ]]></content>
