@@ -4,13 +4,28 @@
   <title><![CDATA[woiconBlog]]></title>
   <link href="/atom.xml/atom.xml" rel="self"/>
   <link href="/atom.xml/"/>
-  <updated>2017-03-01T15:41:02+08:00</updated>
+  <updated>2017-03-01T15:44:35+08:00</updated>
   <id>/atom.xml/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[about]]></title>
+    <link href="/atom.xml/14883548064080.html"/>
+    <updated>2017-03-01T15:53:26+08:00</updated>
+    <id>/atom.xml/14883548064080.html</id>
+    <content type="html"><![CDATA[
+<blockquote>
+<p>主要工作界面设计兼前端开发。<br/>
+微信：hellolifeandworld<br/>
+邮箱：<a href="mailto:hello@woicon.com">hello@woicon.com</a></p>
+</blockquote>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[阿米巴经营]]></title>
