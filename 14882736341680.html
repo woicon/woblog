@@ -20,7 +20,7 @@
   <script>hljs.initHighlightingOnLoad();</script>
 <script type="text/javascript">
   function before_search(){
-    var searchVal = 'site: ' + document.getElementById('search_input').value;
+    var searchVal = 'site:/atom.xml ' + document.getElementById('search_input').value;
     document.getElementById('search_q').value = searchVal;
     return true;
   }
@@ -132,26 +132,20 @@ git查看本地分支，带星号的为当前开发的分支。</p>
 </code></pre>
 
 <p><strong><em>git新建分支</em></strong><br/>
-<code><br/>
-$git checkout newbranch //切换分支<br/>
+<code>$git checkout newbranch //切换分支<br/>
 </code><br/>
 <strong><em>git删除分支</em></strong><br/>
 删除远程分支<br/>
-<code><br/>
-$git push origin :master;//删除远程master分支<br/>
-</code><br/>
+<code>$git push origin :master;//删除远程master分支</code><br/>
 删除本地分支<br/>
-<code><br/>
-$git branch -D newbranch;//删除本地master分支<br/>
+<code>$git branch -D newbranch;//删除本地master分支<br/>
 </code><br/>
-<strong><em>git切换分支</em></strong></p>
-
-<pre><code>git clone
-git remote
-git fetch
-git pull
-git push
-</code></pre>
+<strong><em>git切换分支</em></strong><br/>
+<code>git clone <br/>
+git remote <br/>
+git fetch <br/>
+git pull <br/>
+git push</code></p>
 
 
     
@@ -194,7 +188,7 @@ git push
           <div id="site-info" class="site-info">
             
                 <h1>woiconBlog</h1>
-                <div class="site-des"></div>
+                <div class="site-des">woicon Blog博客</div>
                 <div class="social">
 
 
@@ -310,8 +304,8 @@ Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
      
     </script>
 
-    
-
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
 
   </body>
