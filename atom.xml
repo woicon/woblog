@@ -4,7 +4,7 @@
   <title><![CDATA[woiconBlog]]></title>
   <link href="/atom.xml/atom.xml" rel="self"/>
   <link href="/atom.xml/"/>
-  <updated>2017-03-03T16:43:12+08:00</updated>
+  <updated>2017-03-03T16:47:35+08:00</updated>
   <id>/atom.xml/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -141,7 +141,6 @@ master
 $git push origin :master;//删除远程master分支
 $git branch -D newbranch;//删除本地master分支
 $git checkout newbranch//切换分支
-
 </code></pre>
 
 ]]></content>
