@@ -105,41 +105,6 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="14883548064080.html">
-                
-                  <h1>about</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<blockquote>
-<p>主要工作界面设计兼前端开发。<br/>
-微信：hellolifeandworld<br/>
-邮箱：<a href="mailto:hello@woicon.com">hello@woicon.com</a></p>
-</blockquote>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/3/1</span>
-                    
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
                 <a class="clearlink" href="14882775961284.html">
                 
                   <h1>阿米巴经营</h1>
@@ -247,34 +212,75 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 
 <h3 id="toc_1">配置文件</h3>
 
-<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 --config 选项来指定配置文件。<br/>
-<code><br/>
-{<br/>
-  &quot;name&quot;: &quot;webpack-example&quot;,<br/>
-  &quot;version&quot;: &quot;1.0.0&quot;,<br/>
-  &quot;description&quot;: &quot;A simple webpack example.&quot;,<br/>
-  &quot;main&quot;: &quot;bundle.js&quot;,<br/>
-  &quot;scripts&quot;: {<br/>
-    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;<br/>
-  },<br/>
-  &quot;keywords&quot;: [<br/>
-    &quot;webpack&quot;<br/>
-  ],<br/>
-  &quot;author&quot;: &quot;zhaoda&quot;,<br/>
-  &quot;license&quot;: &quot;MIT&quot;,<br/>
-  &quot;devDependencies&quot;: {<br/>
-    &quot;css-loader&quot;: &quot;^0.21.0&quot;,<br/>
-    &quot;style-loader&quot;: &quot;^0.13.0&quot;,<br/>
-    &quot;webpack&quot;: &quot;^1.12.2&quot;<br/>
-  }<br/>
-}<br/>
-</code></p>
+<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 &ndash;config 选项来指定配置文件。</p>
+
+<pre><code class="language-{">  &quot;name&quot;: &quot;webpack-example&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;A simple webpack example.&quot;,
+  &quot;main&quot;: &quot;bundle.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  },
+  &quot;keywords&quot;: [
+    &quot;webpack&quot;
+  ],
+  &quot;author&quot;: &quot;zhaoda&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;devDependencies&quot;: {
+    &quot;css-loader&quot;: &quot;^0.21.0&quot;,
+    &quot;style-loader&quot;: &quot;^0.13.0&quot;,
+    &quot;webpack&quot;: &quot;^1.12.2&quot;
+  }
+}
+</code></pre>
 
 <h3 id="toc_2">commonJS规范</h3>
 
 <p>CommonJS规范包括了模块（modules）、包（packages）、系统（system）、二进制（binary）、控制台（console）、编码（encodings）、文件系统（filesystems）、套接字（sockets）、单元测试（unit testing）等部分。目前大部分标准都在拟定和讨论之中，已经发布的标准有Modules/1.0、Modules/1.1、Modules/1.1.1、Packages/1.0、System/1.0。</p>
 
 <h3 id="toc_3">AMD规范</h3>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/2/28</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='code.html'>code</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14882669616759.html">
+                
+                  <h1>微信小程序中使用字体图标</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>最近在做小程序方面的工作,小程序icon组件图标很少,又不想使用css背景图或者直接引入imgage,直接@font-face .ttf .woff字体，会有跨域问题。写到页面里吧。</p>
+
+<p>只能转base64了吧，而且纯手工转，icomoon Encode embed css不知道从什么时候起已经开始收费了😭<br/>
+在线转换网址：<a href="https://www.giftofspeed.com/base64-encoder/">https://www.giftofspeed.com/base64-encoder/</a></p>
+
+<pre><code class="language-@font-face">font-family:&#39;font-name&#39;;
+src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetype&#39;);
+</code></pre>
+
+<p>在小程序内就不存在字体格式兼容性问题，用ttf就行了。</p>
 
                         
                       </div>
@@ -323,7 +329,7 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
           <div id="site-info" class="site-info">
             
                 <h1>woiconBlog</h1>
-                <div class="site-des">woicon Blog博客</div>
+                <div class="site-des">zhangyanping blog</div>
                 <div class="social">
 
 
@@ -334,7 +340,7 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 
 
 
-<a target="_blank" class="github" target="_blank" href="woicon.github.com" title="GitHub">GitHub</a>
+
 <a target="_blank" class="email" href="mailto:hello@woicon.com" title="Email">Email</a>
   <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
                 
@@ -370,12 +376,6 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 	      
 		      
 			      <li class="post">
-			        <a href="14883548064080.html">about</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
 			        <a href="14882775961284.html">阿米巴经营</a>
 			      </li>
 		     
@@ -399,6 +399,10 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 		     
 		  
 		      
+			      <li class="post">
+			        <a href="14882736341680.html">git远程操作</a>
+			      </li>
+		     
 		   
 		  		</ul>
                 </div>
@@ -441,8 +445,8 @@ Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
      
     </script>
 
-    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+    
+
 
 
   </body>

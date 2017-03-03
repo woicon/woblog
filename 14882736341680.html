@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  git的远程操作 - woiconBlog
+  git远程操作 - woiconBlog
   
   </title>
   
@@ -105,7 +105,7 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>git的远程操作</h1>
+          <h1>git远程操作</h1>
      
         <div class="read-more clearfix">
           <span class="date">2016/1/28</span>
@@ -125,40 +125,18 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p><strong><em>git查看分支</em></strong><br/>
+      <p><strong>git分支操作</strong><br/>
 git查看本地分支，带星号的为当前开发的分支。</p>
 
-<pre><code>    $git branch -a //查看所有分支
-      master
-    * newblog
+<pre><code>$git branch -a //查看所有分支      
+master
+* newblog
+
+$git push origin :master;//删除远程master分支
+$git branch -D newbranch;//删除本地master分支
+$git checkout newbranch//切换分支
+
 </code></pre>
-
-<p><strong>git新建分支</strong><br/>
-<code><br/>
-    $git checkout newbranch//切换分支<br/>
-</code><br/>
-<strong>git删除分支</strong></p>
-
-<p>删除远程分支<br/>
-<code><br/>
-    $git push origin :master;//删除远程master分支<br/>
-</code><br/>
-删除本地分支<br/>
-<code><br/>
-    $git branch -D newbranch;//删除本地master分支<br/>
-</code><br/>
-<strong>git切换分支</strong><br/>
-<code><br/>
-    git clone<br/>
-    git remote<br/>
-    git fetch<br/>
-    git pull<br/>
-    git push<br/>
-</code><br/>
-<code><br/>
-![GitHub set up](https://help.github.com/assets/images/site/set-up-git.gif)<br/>
-Format: ![Alt Text](url)<br/>
-</code></p>
 
 
     
@@ -201,7 +179,7 @@ Format: ![Alt Text](url)<br/>
           <div id="site-info" class="site-info">
             
                 <h1>woiconBlog</h1>
-                <div class="site-des">woicon Blog博客</div>
+                <div class="site-des">zhangyanping blog</div>
                 <div class="social">
 
 
@@ -212,7 +190,7 @@ Format: ![Alt Text](url)<br/>
 
 
 
-<a target="_blank" class="github" target="_blank" href="woicon.github.com" title="GitHub">GitHub</a>
+
 <a target="_blank" class="email" href="mailto:hello@woicon.com" title="Email">Email</a>
   <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
                 
@@ -248,12 +226,6 @@ Format: ![Alt Text](url)<br/>
 	      
 		      
 			      <li class="post">
-			        <a href="14883548064080.html">about</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
 			        <a href="14882775961284.html">阿米巴经营</a>
 			      </li>
 		     
@@ -277,6 +249,10 @@ Format: ![Alt Text](url)<br/>
 		     
 		  
 		      
+			      <li class="post">
+			        <a href="14882736341680.html">git远程操作</a>
+			      </li>
+		     
 		   
 		  		</ul>
                 </div>
@@ -319,8 +295,8 @@ Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
      
     </script>
 
-    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+    
+
 
 
   </body>
