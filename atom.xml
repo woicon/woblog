@@ -4,7 +4,7 @@
   <title><![CDATA[woiconBlog]]></title>
   <link href="/atom.xml/atom.xml" rel="self"/>
   <link href="/atom.xml/"/>
-  <updated>2017-03-03T16:51:05+08:00</updated>
+  <updated>2017-03-03T16:53:31+08:00</updated>
   <id>/atom.xml/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -100,7 +100,18 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 
 <p>CommonJS规范包括了模块（modules）、包（packages）、系统（system）、二进制（binary）、控制台（console）、编码（encodings）、文件系统（filesystems）、套接字（sockets）、单元测试（unit testing）等部分。目前大部分标准都在拟定和讨论之中，已经发布的标准有Modules/1.0、Modules/1.1、Modules/1.1.1、Packages/1.0、System/1.0。</p>
 
+<pre><code>module.exports = {
+  entry: &#39;./main.js&#39;,
+  output: {
+    filename: &#39;bundle.js&#39;       
+  }
+};
+</code></pre>
+
 <h3 id="toc_3">AMD规范</h3>
+
+<pre><code>require(&#39;./file&#39;) // 按相对路径查找
+</code></pre>
 
 ]]></content>
   </entry>
