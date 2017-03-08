@@ -50,12 +50,10 @@
 
         <ul class="right" id="search-wrap">
           <li>
-<!--
 <form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
     <input type="hidden" id="search_q" name="q" value="" />
     <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
 </form>
--->
 </li>
           </ul>
       </div></div>
@@ -149,7 +147,7 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 
 <h3 id="toc_1">配置文件</h3>
 
-<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 &ndash;config 选项来指定配置文件。</p>
+<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 --config 选项来指定配置文件。</p>
 
 <pre><code class="language-{">  &quot;name&quot;: &quot;webpack-example&quot;,
   &quot;version&quot;: &quot;1.0.0&quot;,
@@ -175,18 +173,7 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 
 <p>CommonJS规范包括了模块（modules）、包（packages）、系统（system）、二进制（binary）、控制台（console）、编码（encodings）、文件系统（filesystems）、套接字（sockets）、单元测试（unit testing）等部分。目前大部分标准都在拟定和讨论之中，已经发布的标准有Modules/1.0、Modules/1.1、Modules/1.1.1、Packages/1.0、System/1.0。</p>
 
-<pre><code>module.exports = {
-  entry: &#39;./main.js&#39;,
-  output: {
-    filename: &#39;bundle.js&#39;       
-  }
-};
-</code></pre>
-
 <h3 id="toc_3">AMD规范</h3>
-
-<pre><code>require(&#39;./file&#39;) // 按相对路径查找
-</code></pre>
 
 
     
@@ -279,6 +266,12 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 	      
 		      
 			      <li class="post">
+			        <a href="14889572496788.html">WOUI的CSS的编写规范</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="14882775961284.html">阿米巴经营</a>
 			      </li>
 		     
@@ -302,10 +295,6 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 		     
 		  
 		      
-			      <li class="post">
-			        <a href="14882736341680.html">git远程操作</a>
-			      </li>
-		     
 		   
 		  		</ul>
                 </div>
@@ -319,7 +308,7 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
  <div class="page-bottom clearfix">
   <div class="row">
    <p class="copyright">Copyright &copy; 2015
-Powered by <a target="_blank" href="http://www.woicon.com">woicon.com</a>,&nbsp; 
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
 Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
   </div>
 </div>

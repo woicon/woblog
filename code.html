@@ -50,12 +50,10 @@
 
         <ul class="right" id="search-wrap">
           <li>
-<!--
 <form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
     <input type="hidden" id="search_q" name="q" value="" />
     <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
 </form>
--->
 </li>
           </ul>
       </div></div>
@@ -104,6 +102,68 @@
 	<div class="large-8 medium-8 columns">
 		<div class="markdown-body home-categories">
 		
+			<div class="article">
+                <a class="clearlink" href="14889572496788.html">
+                
+                  <h1>WOUI的CSS的编写规范</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h3 id="toc_0">写在前面</h3>
+
+<p>所有的CSS语法是不区分大小写的ASCII范围（即，i.e., [a-z] and [A-Z]是等价的）中，除了部分不属于CSS的控制之下。例如，在HTML中值的区分大小写属性“ID”的字体名称和“class”，和URI就在于本规范的范围之内。请特别注意，元素名称是不区分大小写的HTML，但区分大小写的XML。</p>
+
+<h3 id="toc_1">使用less预编译提高效率</h3>
+
+<p>层级深度不超过三级。</p>
+
+<h2 id="toc_2">书写规则</h2>
+
+<h3 id="toc_3">class命名</h3>
+
+<p>class 名称中只能出现小写字符和连字符（不是下划线，也不是驼峰命名法）。连字符应当用于相关 class 的命名（类似于命名空间）（例如，.btn 和 .btn-danger）。<br/>
+避免过度任意的简写。.btn 代表 button，但是 .s 不能表达任何意思。<br/>
+class 名称应当尽可能短，并且意义明确。<br/>
+使用有意义的名称。使用有组织的或目的明确的名称，不要使用表现形式（presentational）的名称。<br/>
+基于最近的父 class 或基本（base） class 作为新 class 的前缀。<br/>
+使用 .js-* class 来标识行为（与样式相对），并且不要将这些 class 包含到 CSS 文件中。</p>
+
+<h3 id="toc_4">CSS属性书写顺序</h3>
+
+<p>1.位置属性(position, top, right, z-index, display, float等)<br/>
+2.大小(width, height, padding, margin)<br/>
+3.文字系列(font, line-height, letter-spacing, color- text-align等)<br/>
+4.背景(background, border等)<br/>
+5.其他(animation, transition等)</p>
+
+<h3 id="toc_5">使用缩写</h3>
+
+<p>CSS有些属性是可以缩写的，比如padding,margin,font等等，这样精简代码同时又能提高用户的阅读体验。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/3/8</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='code.html'>code</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
 			<div class="article">
                 <a class="clearlink" href="14882686442912.html">
                 
@@ -180,7 +240,7 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 
 <h3 id="toc_1">配置文件</h3>
 
-<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 &ndash;config 选项来指定配置文件。</p>
+<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 --config 选项来指定配置文件。</p>
 
 <pre><code class="language-{">  &quot;name&quot;: &quot;webpack-example&quot;,
   &quot;version&quot;: &quot;1.0.0&quot;,
@@ -206,18 +266,7 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 
 <p>CommonJS规范包括了模块（modules）、包（packages）、系统（system）、二进制（binary）、控制台（console）、编码（encodings）、文件系统（filesystems）、套接字（sockets）、单元测试（unit testing）等部分。目前大部分标准都在拟定和讨论之中，已经发布的标准有Modules/1.0、Modules/1.1、Modules/1.1.1、Packages/1.0、System/1.0。</p>
 
-<pre><code>module.exports = {
-  entry: &#39;./main.js&#39;,
-  output: {
-    filename: &#39;bundle.js&#39;       
-  }
-};
-</code></pre>
-
 <h3 id="toc_3">AMD规范</h3>
-
-<pre><code>require(&#39;./file&#39;) // 按相对路径查找
-</code></pre>
 
                         
                       </div>
@@ -284,49 +333,6 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetyp
                 </div>
               </div><!-- article -->
         
-			<div class="article">
-                <a class="clearlink" href="14882736341680.html">
-                
-                  <h1>git远程操作</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p><strong>git分支操作</strong><br/>
-git查看本地分支，带星号的为当前开发的分支。</p>
-
-<pre><code>$git branch -a //查看所有分支      
-master
-* newblog
-
-$git push origin :master;//删除远程master分支
-$git branch -D newbranch;//删除本地master分支
-$git checkout newbranch//切换分支
-</code></pre>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2016/1/28</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
               
 
 
@@ -338,7 +344,7 @@ $git checkout newbranch//切换分支
 			  </div>
 			  <div class="large-6 columns">
 			<p class="text-right" style="padding-top:25px;">
-			
+			 <a href="code_1.html">&raquo; Next Page</a> 
 			</p>
 			  </div>
 			</div>
@@ -398,6 +404,12 @@ $git checkout newbranch//切换分支
 	      
 		      
 			      <li class="post">
+			        <a href="14889572496788.html">WOUI的CSS的编写规范</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="14882775961284.html">阿米巴经营</a>
 			      </li>
 		     
@@ -421,10 +433,6 @@ $git checkout newbranch//切换分支
 		     
 		  
 		      
-			      <li class="post">
-			        <a href="14882736341680.html">git远程操作</a>
-			      </li>
-		     
 		   
 		  		</ul>
                 </div>
@@ -438,7 +446,7 @@ $git checkout newbranch//切换分支
  <div class="page-bottom clearfix">
   <div class="row">
    <p class="copyright">Copyright &copy; 2015
-Powered by <a target="_blank" href="http://www.woicon.com">woicon.com</a>,&nbsp; 
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
 Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
   </div>
 </div>

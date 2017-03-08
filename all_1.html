@@ -50,12 +50,10 @@
 
         <ul class="right" id="search-wrap">
           <li>
-<!--
 <form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
     <input type="hidden" id="search_q" name="q" value="" />
     <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
 </form>
--->
 </li>
           </ul>
       </div></div>
@@ -104,6 +102,48 @@
 	<div class="large-8 medium-8 columns">
 		<div class="markdown-body home-categories">
 		
+			<div class="article">
+                <a class="clearlink" href="14882669616759.html">
+                
+                  <h1>微信小程序中使用字体图标</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>最近在做小程序方面的工作,小程序icon组件图标很少,又不想使用css背景图或者直接引入imgage,直接@font-face .ttf .woff字体，会有跨域问题。写到页面里吧。</p>
+
+<p>只能转base64了吧，而且纯手工转，icomoon Encode embed css不知道从什么时候起已经开始收费了😭<br/>
+在线转换网址：<a href="https://www.giftofspeed.com/base64-encoder/">https://www.giftofspeed.com/base64-encoder/</a></p>
+
+<pre><code class="language-@font-face">font-family:&#39;font-name&#39;;
+src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetype&#39;);
+</code></pre>
+
+<p>在小程序内就不存在字体格式兼容性问题，用ttf就行了。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/2/28</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='code.html'>code</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
 			<div class="article">
                 <a class="clearlink" href="14882736341680.html">
                 
@@ -218,6 +258,12 @@ $git checkout newbranch//切换分支
 	      
 		      
 			      <li class="post">
+			        <a href="14889572496788.html">WOUI的CSS的编写规范</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="14882775961284.html">阿米巴经营</a>
 			      </li>
 		     
@@ -241,10 +287,6 @@ $git checkout newbranch//切换分支
 		     
 		  
 		      
-			      <li class="post">
-			        <a href="14882736341680.html">git远程操作</a>
-			      </li>
-		     
 		   
 		  		</ul>
                 </div>
@@ -258,7 +300,7 @@ $git checkout newbranch//切换分支
  <div class="page-bottom clearfix">
   <div class="row">
    <p class="copyright">Copyright &copy; 2015
-Powered by <a target="_blank" href="http://www.woicon.com">woicon.com</a>,&nbsp; 
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
 Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
   </div>
 </div>
