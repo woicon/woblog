@@ -4,7 +4,7 @@
   <title><![CDATA[woiconBlog]]></title>
   <link href="/atom.xml/atom.xml" rel="self"/>
   <link href="/atom.xml/"/>
-  <updated>2017-03-08T15:33:56+08:00</updated>
+  <updated>2017-03-08T16:15:17+08:00</updated>
   <id>/atom.xml/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -37,7 +37,9 @@ class 名称应当尽可能短，并且意义明确。<br/>
 基于最近的父 class 或基本（base） class 作为新 class 的前缀。<br/>
 使用 .js-* class 来标识行为（与样式相对），并且不要将这些 class 包含到 CSS 文件中。</p>
 
-<h3 id="toc_4">CSS属性书写顺序</h3>
+<h3 id="toc_4">避免过深的层级</h3>
+
+<h3 id="toc_5">CSS属性书写顺序</h3>
 
 <p>1.位置属性(position, top, right, z-index, display, float等)<br/>
 2.大小(width, height, padding, margin)<br/>
@@ -45,7 +47,7 @@ class 名称应当尽可能短，并且意义明确。<br/>
 4.背景(background, border等)<br/>
 5.其他(animation, transition等)</p>
 
-<h3 id="toc_5">使用缩写</h3>
+<h3 id="toc_6">使用缩写</h3>
 
 <p>CSS有些属性是可以缩写的，比如padding,margin,font等等，这样精简代码同时又能提高用户的阅读体验。</p>
 
@@ -161,6 +163,16 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetyp
 </code></pre>
 
 <p>在小程序内就不存在字体格式兼容性问题，用ttf就行了。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[es6学习笔记]]></title>
+    <link href="/atom.xml/14890321432064.html"/>
+    <updated>2017-03-09T12:02:23+08:00</updated>
+    <id>/atom.xml/14890321432064.html</id>
+    <content type="html"><![CDATA[
 
 ]]></content>
   </entry>
