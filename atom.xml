@@ -4,13 +4,53 @@
   <title><![CDATA[woiconBlog]]></title>
   <link href="/atom.xml/atom.xml" rel="self"/>
   <link href="/atom.xml/"/>
-  <updated>2017-03-08T16:15:17+08:00</updated>
+  <updated>2017-03-19T21:22:51+08:00</updated>
   <id>/atom.xml/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[flex布局实践]]></title>
+    <link href="/atom.xml/css&flex.html"/>
+    <updated>2017-03-19T15:06:44+08:00</updated>
+    <id>/atom.xml/css&flex.html</id>
+    <content type="html"><![CDATA[
+<p>布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。<br/>
+2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
+
+<p><strong>1. Flex布局是什么？</strong><br/>
+Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。<br/>
+任何一个容器都可以指定为Flex布局。</p>
+
+<pre><code>.box{
+  display: flex;
+}
+</code></pre>
+
+<p>行内元素也可以使用Flex布局。</p>
+
+<pre><code>.box{
+  display: inline-flex;
+}
+</code></pre>
+
+<p>Webkit内核的浏览器，必须加上-webkit前缀。</p>
+
+<pre><code>.box{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+</code></pre>
+
+<blockquote>
+<p>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
+</blockquote>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[WOUI的CSS的编写规范]]></title>
@@ -116,7 +156,7 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 
 <h3 id="toc_1">配置文件</h3>
 
-<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 --config 选项来指定配置文件。</p>
+<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 &ndash;config 选项来指定配置文件。</p>
 
 <pre><code class="language-{">  &quot;name&quot;: &quot;webpack-example&quot;,
   &quot;version&quot;: &quot;1.0.0&quot;,

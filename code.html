@@ -50,10 +50,12 @@
 
         <ul class="right" id="search-wrap">
           <li>
+<!--
 <form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
     <input type="hidden" id="search_q" name="q" value="" />
     <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
 </form>
+-->
 </li>
           </ul>
       </div></div>
@@ -102,6 +104,68 @@
 	<div class="large-8 medium-8 columns">
 		<div class="markdown-body home-categories">
 		
+			<div class="article">
+                <a class="clearlink" href="css&flex.html">
+                
+                  <h1>flex布局实践</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。<br/>
+2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
+
+<p><strong>1. Flex布局是什么？</strong><br/>
+Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。<br/>
+任何一个容器都可以指定为Flex布局。</p>
+
+<pre><code>.box{
+  display: flex;
+}
+</code></pre>
+
+<p>行内元素也可以使用Flex布局。</p>
+
+<pre><code>.box{
+  display: inline-flex;
+}
+</code></pre>
+
+<p>Webkit内核的浏览器，必须加上-webkit前缀。</p>
+
+<pre><code>.box{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+</code></pre>
+
+<blockquote>
+<p>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
+</blockquote>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/3/19</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='code.html'>code</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
 			<div class="article">
                 <a class="clearlink" href="14889572496788.html">
                 
@@ -242,7 +306,7 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 
 <h3 id="toc_1">配置文件</h3>
 
-<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 --config 选项来指定配置文件。</p>
+<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 &ndash;config 选项来指定配置文件。</p>
 
 <pre><code class="language-{">  &quot;name&quot;: &quot;webpack-example&quot;,
   &quot;version&quot;: &quot;1.0.0&quot;,
@@ -269,48 +333,6 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 <p>CommonJS规范包括了模块（modules）、包（packages）、系统（system）、二进制（binary）、控制台（console）、编码（encodings）、文件系统（filesystems）、套接字（sockets）、单元测试（unit testing）等部分。目前大部分标准都在拟定和讨论之中，已经发布的标准有Modules/1.0、Modules/1.1、Modules/1.1.1、Packages/1.0、System/1.0。</p>
 
 <h3 id="toc_3">AMD规范</h3>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/2/28</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14882669616759.html">
-                
-                  <h1>微信小程序中使用字体图标</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>最近在做小程序方面的工作,小程序icon组件图标很少,又不想使用css背景图或者直接引入imgage,直接@font-face .ttf .woff字体，会有跨域问题。写到页面里吧。</p>
-
-<p>只能转base64了吧，而且纯手工转，icomoon Encode embed css不知道从什么时候起已经开始收费了😭<br/>
-在线转换网址：<a href="https://www.giftofspeed.com/base64-encoder/">https://www.giftofspeed.com/base64-encoder/</a></p>
-
-<pre><code class="language-@font-face">font-family:&#39;font-name&#39;;
-src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetype&#39;);
-</code></pre>
-
-<p>在小程序内就不存在字体格式兼容性问题，用ttf就行了。</p>
 
                         
                       </div>
@@ -406,6 +428,12 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetyp
 	      
 		      
 			      <li class="post">
+			        <a href="css&flex.html">flex布局实践</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="14889572496788.html">WOUI的CSS的编写规范</a>
 			      </li>
 		     
@@ -429,10 +457,6 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetyp
 		     
 		  
 		      
-			      <li class="post">
-			        <a href="14882669616759.html">微信小程序中使用字体图标</a>
-			      </li>
-		     
 		  
 		      
 		  
@@ -450,7 +474,7 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetyp
  <div class="page-bottom clearfix">
   <div class="row">
    <p class="copyright">Copyright &copy; 2015
-Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Powered by <a target="_blank" href="http://www.woicon.com">woicon.com</a>,&nbsp; 
 Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
   </div>
 </div>
