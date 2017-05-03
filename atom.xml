@@ -4,7 +4,7 @@
   <title><![CDATA[woiconBlog]]></title>
   <link href="/atom.xml/atom.xml" rel="self"/>
   <link href="/atom.xml/"/>
-  <updated>2017-05-03T10:37:55+08:00</updated>
+  <updated>2017-05-03T10:37:57+08:00</updated>
   <id>/atom.xml/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -206,24 +206,23 @@ object.addEventListener(&quot;animationend&quot;, myScript);        // 标准语
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[225蓝牙连接问题]]></title>
+    <title type="html"><![CDATA[GARMIN 225蓝牙连接问题]]></title>
     <link href="/atom.xml/14927366229693.html"/>
     <updated>2017-04-21T09:03:42+08:00</updated>
     <id>/atom.xml/14927366229693.html</id>
     <content type="html"><![CDATA[
-<ol>
-<li>手表关机，关闭手机蓝牙；</li>
-<li>等待五秒后，同时按住B键+C键；</li>
-<li>步骤2按住不放，再按住A键不放，此时同时按住ABC三个键；</li>
-<li>等待几秒, 听到哔一声，放开A键，此时仍同时按住BC两个键</li>
-<li>等待几秒（可能会很长时间，耐心等），听到哔一声，放开C键;</li>
-<li>等待几秒, 听到哔一声， 放开B键；</li>
-<li>成功后会出现第一次开机的情况（显示简体中文字样）， 可以接着把225的各项设置逐一完成；</li>
-<li>把手机Connect APP中注册的225手表先删除；</li>
-<li>手机重新开机，开启蓝牙；</li>
-<li>开启手表225的蓝牙配对，设置&gt;蓝牙&gt;移动设备配对</li>
-<li>开启手机Garmin Connect app，设备&gt; &ldquo;+&rdquo;&gt; 健身 &gt; forerunner 225 &gt;搜寻。</li>
-</ol>
+<p>手表最近总是连接不上手机。<br/>
+1. 手表关机，关闭手机蓝牙；<br/>
+2. 等待五秒后，同时按住B键+C键；<br/>
+3. 步骤2按住不放，再按住A键不放，此时同时按住ABC三个键；<br/>
+4. 等待几秒, 听到哔一声，放开A键，此时仍同时按住BC两个键<br/>
+5. 等待几秒（可能会很长时间，耐心等），听到哔一声，放开C键;<br/>
+6. 等待几秒, 听到哔一声， 放开B键；<br/>
+7. 成功后会出现第一次开机的情况（显示简体中文字样）， 可以接着把225的各项设置逐一完成；<br/>
+8. 把手机Connect APP中注册的225手表先删除；<br/>
+9. 手机重新开机，开启蓝牙；<br/>
+10. 开启手表225的蓝牙配对，设置&gt;蓝牙&gt;移动设备配对<br/>
+11. 开启手机Garmin Connect app，设备&gt; &ldquo;+&rdquo;&gt; 健身 &gt; forerunner 225 &gt;搜寻。</p>
 
 <p>以上做完后, 就会看到手机上出现询问配对码是否正确的对话框，确定之后就会连接、注册且完成同步了。<br/>
 以后只要开启Garmin connect, 按手表的跑步键两次，等待几秒，就会正常同步。</p>
