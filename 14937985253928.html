@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  read - woiconBlog
+  question一些问题记录 - woiconBlog
   
   </title>
   
@@ -98,128 +98,156 @@
        
 
  <script type="text/javascript">
-	$(function(){
-		$('#menu_item_index').addClass('is_active');
-	});
+  $(function(){
+    $('#menu_item_index').addClass('is_active');
+  });
 </script>
 <div class="row">
-	<div class="large-8 medium-8 columns">
-		<div class="markdown-body home-categories">
-		
-			<div class="article">
-                <a class="clearlink" href="14926503124149.html">
-                
-                  <h1>es6入门</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">let和const命令</h2>
+  <div class="large-8 medium-8 columns">
+      <div class="markdown-body article-wrap">
+       <div class="article">
+          
+          <h1>question一些问题记录</h1>
+     
+        <div class="read-more clearfix">
+          <span class="date">2014/8/3</span>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/4/20</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='read.html'>read</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+          <span>posted in&nbsp;</span> 
+          
+              <span class="posted-in"><a href='code.html'>code</a></span>
+           
+         
+          <span class="comments">
+            
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
+            
+          </span>
+
+        </div>
+      </div><!-- article -->
+
+      <div class="article-content">
+      <h2 id="toc_0">怎么用js创建一个class</h2>
+
+<p>Javascipt语法不支持&quot;类&quot;（class），导致传统的面向对象编程方法无法直接使用。程序员们做了很多探索，研究如何用Javascript模拟&quot;类&quot;。<br/>
+在面向对象编程中，类（class）是对象（object）的模板，定义了同一组对象（又称&quot;实例&quot;）共有的属性和方法。<br/>
+Javascript语言不支持&quot;类&quot;，但是可以用一些变通的方法，模拟出&quot;类&quot;。</p>
+
+<p><strong>构造函数法</strong></p>
+
+<pre><code class="language-function">　this.name = &quot;zhangyan&quot;;
+}
+</code></pre>
+
+<p>生成实例的时候，使用new关键字。</p>
+
+<pre><code class="language-var">console.log(person.name); // zhangyan
+</code></pre>
+
+<p>类的属性和方法，还可以定义在构造函数的prototype对象之上。</p>
+
+<pre><code class="language-person.prototype.makeSound">    console.log(&quot;喵喵喵&quot;);
+}
+</code></pre>
+
+<p><strong>Object.create()法</strong></p>
+
+<p>用这个方法，&quot;类&quot;就是一个对象，不是函数。</p>
+
+<pre><code class="language-var">　　name: &quot;zhangyan&quot;,
+　　makeSound: function(){ alert(&quot;喵喵喵&quot;); }
+};
+</code></pre>
+
+<p>直接用Object.create()生成实例，不需要用到new。</p>
+
+<pre><code class="language-var">console.log(cat1.name); // 大毛
+person1.makeSound(); // 喵喵喵
+</code></pre>
+
+<blockquote>
+<p>各大浏览器的最新版本（包括IE9）都支持这个方法。如果遇到老式浏览器，可以用下面的代码自行部署。</p>
+</blockquote>
+
+<pre><code class="language-if">    Object.create = function (o) {
+        function F(){}
+        F.prototype = o;
+        return new F();
+    };
+}
+</code></pre>
+
+<p>这种方法比&quot;构造函数法&quot;简单，但是不能实现私有属性和私有方法，实例对象之间也不能共享数据，对&quot;类&quot;的模拟不够全面。</p>
+
+<p><strong>极简主义法</strong><br/>
+这种方法不使用this和prototype，代码部署起来非常简单，这大概也是它被叫做&quot;极简主义法&quot;的原因。<br/>
+首先，它也是用一个对象模拟&quot;类&quot;。在这个类里面，定义一个构造函数createNew()，用来生成实例。</p>
+
+<h2 id="toc_1">原生js实现ajax方法</h2>
+
+<pre><code class="language-function">    //先声明一个异步请求对象
+    var xmlHttpReg = null;
+    if (window.ActiveXObject) {//如果是IE
+            xmlHttpReg = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+        } else if (window.XMLHttpRequest) {
+            xmlHttpReg = new XMLHttpRequest(); //实例化一个xmlHttpReg
+        }
         
-			<div class="article">
-                <a class="clearlink" href="14882775961284.html">
-                
-                  <h1>阿米巴经营</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/2/28</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='read.html'>read</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14891384503601.html">
-                
-                  <h1>Http权威指南</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2016/3/10</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='read.html'>read</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-              
+        //如果实例化成功,就调用open()方法,就开始准备向服务器发送请求
+        if (xmlHttpReg != null) {
+        //  true表示该参数规定请求是否异步处理，True 表示脚本会在 send() 方法之后继续执行，而不等待来自服务器的响应。
+        xmlHttpReg.open(&quot;get&quot;, &quot;About.aspx&quot;, true);
+        xmlHttpReg.send(null);
+        xmlHttpReg.onreadystatechange = doResult; //设置回调函数
+    }
+    //回调函数
+    //一旦readyState的值改变,将会调用这个函数,readyState=4表示完成相应
+    //设定函数doResult()
+    function doResult() {
+        if (xmlHttpReg.readyState == 4) {//4代表执行完成
+          if (xmlHttpReg.status == 200) {//200代表执行成功
+            }else{
+          //失败
+            }
+        }
+    }
+}  
+</code></pre>
 
 
-			<div class="row">
-			  <div class="large-6 columns">
-			  <p class="text-left" style="padding-top:25px;">
-			   
-			  </p>
-			  </div>
-			  <div class="large-6 columns">
-			<p class="text-right" style="padding-top:25px;">
-			
-			</p>
-			  </div>
-			</div>
-		</div>
-	</div><!-- large 8 -->
+    
+
+      </div>
+
+      <div class="row">
+        <div class="large-6 columns">
+        <p class="text-left" style="padding:15px 0px;">
+      
+          <a href="14882736341680.html" 
+          title="Previous Post: git远程操作">&laquo; git远程操作</a>
+      
+        </p>
+        </div>
+        <div class="large-6 columns">
+      <p class="text-right" style="padding:15px 0px;">
+      
+      </p>
+        </div>
+      </div>
+      <div class="comments-wrap">
+        <div class="share-comments">
+          
+
+          
+
+          
+        </div>
+      </div>
+    </div><!-- article-wrap -->
+  </div><!-- large 8 -->
+
+
+
 
  <div class="large-4 medium-4 columns">
   <div class="hide-for-small">
