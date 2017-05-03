@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  微信小程序中使用字体图标 - woiconBlog
+  javascript animatio动画事件 - woiconBlog
   
   </title>
   
@@ -107,10 +107,10 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>微信小程序中使用字体图标</h1>
+          <h1>javascript animatio动画事件</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2017/2/28</span>
+          <span class="date">2017/4/24</span>
 
           <span>posted in&nbsp;</span> 
           
@@ -127,16 +127,11 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>最近在做小程序方面的工作,小程序icon组件图标很少,又不想使用css背景图或者直接引入imgage,直接@font-face .ttf .woff字体，会有跨域问题。写到页面里吧。</p>
+      <p>判断css animatio动画是否完成， animationend是判断css3在动画完成后执行事件。</p>
 
-<p>只能转base64了吧，而且纯手工转，icomoon Encode embed css不知道从什么时候起已经开始收费了😭<br/>
-在线转换网址：<a href="https://www.giftofspeed.com/base64-encoder/">https://www.giftofspeed.com/base64-encoder/</a></p>
-
-<pre><code class="language-@font-face">font-family:&#39;font-name&#39;;
-src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetype&#39;);
+<pre><code>object.addEventListener(&quot;webkitAnimationEnd&quot;, myScript);  // Chrome, Safari 和 Opera
+object.addEventListener(&quot;animationend&quot;, myScript);        // 标准语法
 </code></pre>
-
-<p>在小程序内就不存在字体格式兼容性问题，用ttf就行了。</p>
 
 
     
@@ -147,16 +142,16 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetyp
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14882669814482.html" 
-          title="Previous Post: webpack入坑记录">&laquo; webpack入坑记录</a>
+          <a href="14937786660187.html" 
+          title="Previous Post: HTML5 进阶系列：拖放 API 实现拖放排序">&laquo; HTML5 进阶系列：拖放 API 实现拖放排序</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="14890321432064.html" 
-          title="Next Post: es6学习笔记">es6学习笔记 &raquo;</a>
+          <a  href="14927366229693.html" 
+          title="Next Post: 225蓝牙连接问题">225蓝牙连接问题 &raquo;</a>
       
       </p>
         </div>

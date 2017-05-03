@@ -83,6 +83,8 @@
             <li><a href="code.html">code</a></li>
         
             <li><a href="read.html">read</a></li>
+        
+            <li><a href="shoot.html">shoot</a></li>
          
 
       </ul>
@@ -104,6 +106,275 @@
 	<div class="large-8 medium-8 columns">
 		<div class="markdown-body home-categories">
 		
+			<div class="article">
+                <a class="clearlink" href="14937786660187.html">
+                
+                  <h1>HTML5 进阶系列：拖放 API 实现拖放排序</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>HTML5 中提供了直接拖放的 API，极大的方便我们实现拖放效果，不需要去写一大堆的 js，只需要通过监听元素的拖放事件就能实现各种拖放功能。</p>
+
+<p>想要拖放某个元素，必须设置该元素的 draggable 属性为 true，当该属性为 false 时，将不允许拖放。而 img 元素和 a 元素都默认设置了 draggable 属性为 true，可直接拖放，如果不想拖放这两个元素，把属性设为 false 即可。</p>
+
+<h2 id="toc_0">拖放事件</h2>
+
+<p>拖放事件由不同的元素产生。一个元素被拖放，他可能会经过很多个元素上，最终到达想要放置的元素内。这里，我暂时把被拖放的元素称为源对象，被经过的元素称为过程对象，到达的元素我称为目标对象。不同的对象产生不同的拖放事件。</p>
+
+<h2 id="toc_1">源对象：</h2>
+
+<ul>
+<li><p>dragstart：源对象开始拖放。</p></li>
+<li><p>drag：源对象拖放过程中。</p></li>
+<li><p>dragend：源对象拖放结束。</p></li>
+</ul>
+
+<h2 id="toc_2">过程对象：</h2>
+
+<ul>
+<li><p>dragenter：源对象开始进入过程对象范围内。</p></li>
+<li><p>dragover：源对象在过程对象范围内移动。</p></li>
+<li><p>dragleave：源对象离开过程对象的范围。</p></li>
+</ul>
+
+<h2 id="toc_3">目标对象：</h2>
+
+<ul>
+<li>drop：源对象被拖放到目标对象内。</li>
+</ul>
+
+<pre><code>&lt;div id=&quot;source&quot; draggable=&quot;true&quot;&gt;a元素&lt;/div&gt;
+&lt;div id=&quot;process&quot;&gt;b元素&lt;/div&gt;
+&lt;div id=&quot;target&quot;&gt;c元素&lt;/div&gt;
+&lt;script&gt;
+    var source = document.getElementById(&#39;source&#39;),     // a元素
+        process = document.getElementById(&#39;process&#39;),   // b元素
+        target = document.getElementById(&#39;target&#39;);     // c元素
+    
+    source.addEventListener(&#39;dragstart&#39;,function(ev){   // dragstart事件由a元素产生
+        console.log(&#39;a元素开始被拖动&#39;);
+    },false)
+
+    process.addEventListener(&#39;dragenter&#39;,function(ev){  // dragenter事件由b元素产生
+        console.log(&#39;a元素开始进入b元素&#39;);
+    },false)
+    process.addEventListener(&#39;dragleave&#39;,function(ev){  // dragleave事件由b元素产生
+        console.log(&#39;a元素离开b元素&#39;);
+    },false)
+
+    target.addEventListener(&#39;drop&#39;,function(ev){        // drop事件由c元素产生
+        console.log(&#39;a元素拖放到c元素了&#39;);
+        ev.preventDefault();
+    },false)
+    document.ondragover = function(e){e.preventDefault();}
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="toc_4">dataTransfer 对象</h2>
+
+<p>在所有拖放事件中提供了一个数据传递对象 dataTransfer，用于在源对象和目标对象间传递数据。接下来认识一下这个对象的方法和属性，来了解它是如何传递数据的。</p>
+
+<h2 id="toc_5">setData()</h2>
+
+<p>该方法向 dataTransfer 对象中存入数据。接收两个参数，第一个表示要存入数据种类的字符串，现在支持有以下几种：</p>
+
+<p>text/plain：文本文字。</p>
+
+<p>text/html：HTML文字。</p>
+
+<p>text/xml：XML文字。</p>
+
+<p>text/uri-list：URL列表，每个URL为一行。</p>
+
+<p>第二个参数为要存入的数据。例如：</p>
+
+<p><code><br/>
+event.dataTransfer.setData(&#39;text/plain&#39;,&#39;Hello World&#39;);<br/>
+getData()<br/>
+</code></p>
+
+<p>该方法从 dataTransfer 对象中读取数据。参数为在 setData 中指定的数据种类。例如：</p>
+
+<p><code><br/>
+event.dataTransfer.getData(&#39;text/plain&#39;);<br/>
+clearData()<br/>
+</code></p>
+
+<p>该方法清除 dataTransfer 对象中存放的数据。参数可选，为数据种类。若参数为空，则清空所有种类的数据。例如：</p>
+
+<h2 id="toc_6">event.dataTransfer.clearData();</h2>
+
+<h2 id="toc_7">setDragImage()</h2>
+
+<p>该方法通过用img元素来设置拖放图标。接收三个参数，第一个为图标元素，第二个为图标元素离鼠标指针的X轴位移量，第三个为图标元素离鼠标指针的Y轴位移量。例如：</p>
+
+<pre><code>var source = document.getElementById(&#39;source&#39;),
+    icon = document.createElement(&#39;img&#39;);
+
+icon.src = &#39;img.png&#39;;
+
+source.addEventListener(&#39;dragstart&#39;,function(ev){
+    ev.dataTransfer.setDragImage(icon,-10,-10)
+},false)
+</code></pre>
+
+<h2 id="toc_8">effectAllowed 和 dropEffect 属性</h2>
+
+<p>这两个属性结合起来设置拖放的视觉效果。</p>
+
+<p>值得注意的是：dataTransfer 对象不支持IE。对，不支持IE。</p>
+
+<p>实现拖放排序</p>
+
+<p>上面已经熟悉了拖放 API 的使用，我们来实现个简单的拖放排序，这也是在项目中比较常见的。先来理一下思路：</p>
+
+<p>在一个列表中，每个元素都可以被拖放，那首先要给每个元素设置 draggable 属性为 true。</p>
+
+<p>监听每个元素的 dragstart 事件，对源对象做样式处理来区分。</p>
+
+<p>监听每个元素的 dragenter 事件，当源对象进入到当前元素里，就把源对象添加到该元素之前。这样子后面的元素就会被源对象挤下去了，实现了排序的效果。</p>
+
+<p>但是会发现，源对象无法排到最后一个去，只能在倒数第二。这时就要监听 dragleave 事件，当过程对象是最后一个元素时，源对象离开了过程对象，这时就把源对象添加到最后去。</p>
+
+<p>主要代码如下：</p>
+
+<pre><code>var source = document.querySelectorAll(&#39;.list&#39;),
+    dragElement = null;
+
+for(var i = 0; i &lt; source.length; i++){
+    source[i].addEventListener(&#39;dragstart&#39;,function(ev){
+        dragElement = this;
+    },false);
+
+    source[i].addEventListener(&#39;dragenter&#39;, function(ev){
+        if(dragElement != this){
+            this.parentNode.insertBefore(dragElement,this);
+        }
+    }, false)
+
+    source[i].addEventListener(&#39;dragleave&#39;, function(ev){
+        if(dragElement != this){
+            if(this == this.parentNode.lastElementChild || this == this.parentNode.lastChild){
+                this.parentNode.appendChild(dragElement);
+            }
+        }
+    }, false)
+};
+
+document.ondragover = function(e){e.preventDefault();}
+document.ondrop = function(e){e.preventDefault();}
+</code></pre>
+
+<h2 id="toc_9">兼容</h2>
+
+<p>主要是在IE中的兼容不太好，不过至少在IE10中能兼容上面的拖动排序。</p>
+
+<p>而且在我简单的试验中发现，就是在 IE 中元素不设置 height 的时候，不会触发 dragleave 事件。</p>
+
+<p>更重要的一点是在 ios 和安卓上，完全不兼容。不过还好，有一个插件能让它在移动端完美兼容。<br/>
+插件地址：ios-html5-drag-drop-shim</p>
+
+<p>只需要在原有的代码中引入该插件，即可在移动端上实现拖动了。</p>
+
+<pre><code>&lt;script&gt;
+var iosDragDropShim = { enableEnterLeave: true }
+&lt;/script&gt;
+&lt;script src=&quot;vendor/ios-drag-drop.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/5/3</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='code.html'>code</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14930210074983.html">
+                
+                  <h1>javascript animatio动画事件</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>判断css animatio动画是否完成， animationend是判断css3在动画完成后执行事件。</p>
+
+<pre><code>object.addEventListener(&quot;webkitAnimationEnd&quot;, myScript);  // Chrome, Safari 和 Opera
+object.addEventListener(&quot;animationend&quot;, myScript);        // 标准语法
+</code></pre>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/4/24</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='code.html'>code</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14901536948215.html">
+                
+                  <h1>设计模式开发实践</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/3/22</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='code.html'>code</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
 			<div class="article">
                 <a class="clearlink" href="14889572496788.html">
                 
@@ -153,175 +424,6 @@ class 名称应当尽可能短，并且意义明确。<br/>
                   <div class="more-left left">
                   
                     <span class="date">2017/3/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14882686442912.html">
-                
-                  <h1>module.exports浅析</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>在开发一个复杂的应用程序的时候，我们需要把各个功能拆分、封装到不同的文件，在需要的时候引用该文件。没人会写一个几万行代码的文件，这样在可读性、复用性和维护性上都很差，几乎所有的编程语言都有自己的模块组织方式，比如Java中的包、C#中的程序集等，node.js使用模块和包来组织，其机制实现参照了CommonJS标准，虽未完全遵守，但差距不大，使用起来非常简单。</p>
-
-<h3 id="toc_0">什么是模块？</h3>
-
-<p>在node.js中模块与文件是一一对应的，也就是说一个node.js文件就是一个模块，文件内容可能是我们封装好的一些JavaScript方法、JSON数据、编译过的C/C++拓展等，在关于node.js的误会提到过node.js的架构。<br/>
-其中http、fs、net等都是node.js提供的核心模块，使用C/C++实现，外部用JavaScript封装。</p>
-
-<h3 id="toc_1">创建、加载模块</h3>
-
-<p>模块在node.js中的概念很简单，看看如何创建一个我们自己的模块供开发复用。</p>
-
-<p>在node.js中创建模块非常简单，一个文件就是一个模块，所以我们创建一个test.js文件就创建了一个模块</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/2/28</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14882669814482.html">
-                
-                  <h1>webpack入坑记录</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>Webpack 会分析入口文件，解析包含依赖关系的各个文件。这些文件（模块）都打包到 bundle.js 。Webpack 会给每个模块分配一个唯一的 id 并通过这个 id 索引和访问模块。在页面启动时，会先执行 entry.js 中的代码，其它模块会在运行 require 的时候再执行。</p>
-
-<h3 id="toc_0">Loader</h3>
-
-<p>Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件，就需要使用 loader 进行转换。</p>
-
-<p>Loader 可以理解为是模块和资源的转换器，它本身是一个函数，接受源文件作为参数，返回转换的结果。这样，我们就可以通过 require 来加载任何类型的模块或文件，比如 CoffeeScript、 JSX、 LESS 或图片。</p>
-
-<p><strong>loader 有哪些特性？</strong><br/>
-Loader 可以通过管道方式链式调用，每个 loader 可以把资源转换成任意格式并传递给下一个 loader ，但是最后一个 loader 必须返回 JavaScript。<br/>
-Loader 可以同步或异步执行。<br/>
-Loader 运行在 node.js 环境中，所以可以做任何可能的事情。<br/>
-Loader 可以接受参数，以此来传递配置项给 loader。<br/>
-Loader 可以通过文件扩展名（或正则表达式）绑定给不同类型的文件。<br/>
-Loader 可以通过 npm 发布和安装。<br/>
-除了通过 package.json 的 main 指定，通常的模块也可以导出一个 loader 来使用。<br/>
-Loader 可以访问配置。<br/>
-插件可以让 loader 拥有更多特性。<br/>
-Loader 可以分发出附加的任意文件。<br/>
-Loader 本身也是运行在 node.js 环境中的 JavaScript 模块，它通常会返回一个函数。大多数情况下，我们通过 npm 来管理 loader，但是你也可以在项目中自己写 loader 模块。<br/>
-Loader 可以在 require() 引用模块的时候添加，也可以在 webpack 全局配置中进行绑定，还可以通过命令行的方式使用。</p>
-
-<h3 id="toc_1">配置文件</h3>
-
-<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 &ndash;config 选项来指定配置文件。</p>
-
-<pre><code class="language-{">  &quot;name&quot;: &quot;webpack-example&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;A simple webpack example.&quot;,
-  &quot;main&quot;: &quot;bundle.js&quot;,
-  &quot;scripts&quot;: {
-    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
-  },
-  &quot;keywords&quot;: [
-    &quot;webpack&quot;
-  ],
-  &quot;author&quot;: &quot;zhaoda&quot;,
-  &quot;license&quot;: &quot;MIT&quot;,
-  &quot;devDependencies&quot;: {
-    &quot;css-loader&quot;: &quot;^0.21.0&quot;,
-    &quot;style-loader&quot;: &quot;^0.13.0&quot;,
-    &quot;webpack&quot;: &quot;^1.12.2&quot;
-  }
-}
-</code></pre>
-
-<h3 id="toc_2">commonJS规范</h3>
-
-<p>CommonJS规范包括了模块（modules）、包（packages）、系统（system）、二进制（binary）、控制台（console）、编码（encodings）、文件系统（filesystems）、套接字（sockets）、单元测试（unit testing）等部分。目前大部分标准都在拟定和讨论之中，已经发布的标准有Modules/1.0、Modules/1.1、Modules/1.1.1、Packages/1.0、System/1.0。</p>
-
-<h3 id="toc_3">AMD规范</h3>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/2/28</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14882669616759.html">
-                
-                  <h1>微信小程序中使用字体图标</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>最近在做小程序方面的工作,小程序icon组件图标很少,又不想使用css背景图或者直接引入imgage,直接@font-face .ttf .woff字体，会有跨域问题。写到页面里吧。</p>
-
-<p>只能转base64了吧，而且纯手工转，icomoon Encode embed css不知道从什么时候起已经开始收费了😭<br/>
-在线转换网址：<a href="https://www.giftofspeed.com/base64-encoder/">https://www.giftofspeed.com/base64-encoder/</a></p>
-
-<pre><code class="language-@font-face">font-family:&#39;font-name&#39;;
-src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetype&#39;);
-</code></pre>
-
-<p>在小程序内就不存在字体格式兼容性问题，用ttf就行了。</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/2/28</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='code.html'>code</a></span>
@@ -392,6 +494,8 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetyp
             <a href="code.html"><strong>code</strong></a>
         
             <a href="read.html"><strong>read</strong></a>
+        
+            <a href="shoot.html"><strong>shoot</strong></a>
          
         </p>
 
@@ -408,33 +512,43 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetyp
 	      
 		      
 			      <li class="post">
-			        <a href="14889572496788.html">WOUI的CSS的编写规范</a>
+			        <a href="14937786660187.html">HTML5 进阶系列：拖放 API 实现拖放排序</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="14882775961284.html">阿米巴经营</a>
+			        <a href="14930210074983.html">javascript animatio动画事件</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="14882686442912.html">module.exports浅析</a>
+			        <a href="14927366229693.html">225蓝牙连接问题</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="14882669814482.html">webpack入坑记录</a>
+			        <a href="14926503124149.html">es6入门</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="14882669616759.html">微信小程序中使用字体图标</a>
+			        <a href="14901536948215.html">设计模式开发实践</a>
 			      </li>
 		     
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
 		  
 		      
 		  

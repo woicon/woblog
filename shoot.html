@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  woiconBlog
+  shoot - woiconBlog
   
   </title>
   
@@ -107,77 +107,29 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="14901536948215.html">
+                <a class="clearlink" href="14927366229693.html">
                 
-                  <h1>设计模式开发实践</h1>
+                  <h1>225蓝牙连接问题</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/3/22</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+                        	<ol>
+<li>手表关机，关闭手机蓝牙；</li>
+<li>等待五秒后，同时按住B键+C键；</li>
+<li>步骤2按住不放，再按住A键不放，此时同时按住ABC三个键；</li>
+<li>等待几秒, 听到哔一声，放开A键，此时仍同时按住BC两个键</li>
+<li>等待几秒（可能会很长时间，耐心等），听到哔一声，放开C键;</li>
+<li>等待几秒, 听到哔一声， 放开B键；</li>
+<li>成功后会出现第一次开机的情况（显示简体中文字样）， 可以接着把225的各项设置逐一完成；</li>
+<li>把手机Connect APP中注册的225手表先删除；</li>
+<li>手机重新开机，开启蓝牙；</li>
+<li>开启手表225的蓝牙配对，设置&gt;蓝牙&gt;移动设备配对</li>
+<li>开启手机Garmin Connect app，设备&gt; &ldquo;+&rdquo;&gt; 健身 &gt; forerunner 225 &gt;搜寻。</li>
+</ol>
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14889572496788.html">
-                
-                  <h1>WOUI的CSS的编写规范</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h3 id="toc_0">写在前面</h3>
-
-<p>所有的CSS语法是不区分大小写的ASCII范围（即，i.e., [a-z] and [A-Z]是等价的）中，除了部分不属于CSS的控制之下。例如，在HTML中值的区分大小写属性“ID”的字体名称和“class”，和URI就在于本规范的范围之内。请特别注意，元素名称是不区分大小写的HTML，但区分大小写的XML。</p>
-
-<h3 id="toc_1">使用less预编译提高效率</h3>
-
-<p>层级深度不超过三级。</p>
-
-<h2 id="toc_2">书写规则</h2>
-
-<h3 id="toc_3">class命名</h3>
-
-<p>class 名称中只能出现小写字符和连字符（不是下划线，也不是驼峰命名法）。连字符应当用于相关 class 的命名（类似于命名空间）（例如，.btn 和 .btn-danger）。<br/>
-避免过度任意的简写。.btn 代表 button，但是 .s 不能表达任何意思。<br/>
-class 名称应当尽可能短，并且意义明确。<br/>
-使用有意义的名称。使用有组织的或目的明确的名称，不要使用表现形式（presentational）的名称。<br/>
-基于最近的父 class 或基本（base） class 作为新 class 的前缀。<br/>
-使用 .js-* class 来标识行为（与样式相对），并且不要将这些 class 包含到 CSS 文件中。</p>
-
-<h3 id="toc_4">避免过深的层级</h3>
-
-<h3 id="toc_5">CSS属性书写顺序</h3>
-
-<p>1.位置属性(position, top, right, z-index, display, float等)<br/>
-2.大小(width, height, padding, margin)<br/>
-3.文字系列(font, line-height, letter-spacing, color- text-align等)<br/>
-4.背景(background, border等)<br/>
-5.其他(animation, transition等)</p>
-
-<h3 id="toc_6">使用缩写</h3>
-
-<p>CSS有些属性是可以缩写的，比如padding,margin,font等等，这样精简代码同时又能提高用户的阅读体验。</p>
+<p>以上做完后, 就会看到手机上出现询问配对码是否正确的对话框，确定之后就会连接、注册且完成同步了。<br/>
+以后只要开启Garmin connect, 按手表的跑步键两次，等待几秒，就会正常同步。</p>
 
                         
                       </div>
@@ -186,86 +138,10 @@ class 名称应当尽可能短，并且意义明确。<br/>
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2017/3/8</span>
+                    <span class="date">2017/4/21</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14882775961284.html">
-                
-                  <h1>阿米巴经营</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/2/28</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='read.html'>read</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14882686442912.html">
-                
-                  <h1>module.exports浅析</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>在开发一个复杂的应用程序的时候，我们需要把各个功能拆分、封装到不同的文件，在需要的时候引用该文件。没人会写一个几万行代码的文件，这样在可读性、复用性和维护性上都很差，几乎所有的编程语言都有自己的模块组织方式，比如Java中的包、C#中的程序集等，node.js使用模块和包来组织，其机制实现参照了CommonJS标准，虽未完全遵守，但差距不大，使用起来非常简单。</p>
-
-<h3 id="toc_0">什么是模块？</h3>
-
-<p>在node.js中模块与文件是一一对应的，也就是说一个node.js文件就是一个模块，文件内容可能是我们封装好的一些JavaScript方法、JSON数据、编译过的C/C++拓展等，在关于node.js的误会提到过node.js的架构。<br/>
-其中http、fs、net等都是node.js提供的核心模块，使用C/C++实现，外部用JavaScript封装。</p>
-
-<h3 id="toc_1">创建、加载模块</h3>
-
-<p>模块在node.js中的概念很简单，看看如何创建一个我们自己的模块供开发复用。</p>
-
-<p>在node.js中创建模块非常简单，一个文件就是一个模块，所以我们创建一个test.js文件就创建了一个模块</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/2/28</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
+          					    <span class="posted-in"><a href='shoot.html'>shoot</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -284,12 +160,12 @@ class 名称应当尽可能短，并且意义明确。<br/>
 			<div class="row">
 			  <div class="large-6 columns">
 			  <p class="text-left" style="padding-top:25px;">
-			   <a href="all.html">&laquo; Prev Page</a>  
+			   
 			  </p>
 			  </div>
 			  <div class="large-6 columns">
 			<p class="text-right" style="padding-top:25px;">
-			 <a href="all_2.html">&raquo; Next Page</a> 
+			
 			</p>
 			  </div>
 			</div>

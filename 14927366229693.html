@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  微信小程序中使用字体图标 - woiconBlog
+  225蓝牙连接问题 - woiconBlog
   
   </title>
   
@@ -107,14 +107,14 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>微信小程序中使用字体图标</h1>
+          <h1>225蓝牙连接问题</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2017/2/28</span>
+          <span class="date">2017/4/21</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='code.html'>code</a></span>
+              <span class="posted-in"><a href='shoot.html'>shoot</a></span>
            
          
           <span class="comments">
@@ -127,16 +127,22 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>最近在做小程序方面的工作,小程序icon组件图标很少,又不想使用css背景图或者直接引入imgage,直接@font-face .ttf .woff字体，会有跨域问题。写到页面里吧。</p>
+      <ol>
+<li>手表关机，关闭手机蓝牙；</li>
+<li>等待五秒后，同时按住B键+C键；</li>
+<li>步骤2按住不放，再按住A键不放，此时同时按住ABC三个键；</li>
+<li>等待几秒, 听到哔一声，放开A键，此时仍同时按住BC两个键</li>
+<li>等待几秒（可能会很长时间，耐心等），听到哔一声，放开C键;</li>
+<li>等待几秒, 听到哔一声， 放开B键；</li>
+<li>成功后会出现第一次开机的情况（显示简体中文字样）， 可以接着把225的各项设置逐一完成；</li>
+<li>把手机Connect APP中注册的225手表先删除；</li>
+<li>手机重新开机，开启蓝牙；</li>
+<li>开启手表225的蓝牙配对，设置&gt;蓝牙&gt;移动设备配对</li>
+<li>开启手机Garmin Connect app，设备&gt; &ldquo;+&rdquo;&gt; 健身 &gt; forerunner 225 &gt;搜寻。</li>
+</ol>
 
-<p>只能转base64了吧，而且纯手工转，icomoon Encode embed css不知道从什么时候起已经开始收费了😭<br/>
-在线转换网址：<a href="https://www.giftofspeed.com/base64-encoder/">https://www.giftofspeed.com/base64-encoder/</a></p>
-
-<pre><code class="language-@font-face">font-family:&#39;font-name&#39;;
-src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetype&#39;);
-</code></pre>
-
-<p>在小程序内就不存在字体格式兼容性问题，用ttf就行了。</p>
+<p>以上做完后, 就会看到手机上出现询问配对码是否正确的对话框，确定之后就会连接、注册且完成同步了。<br/>
+以后只要开启Garmin connect, 按手表的跑步键两次，等待几秒，就会正常同步。</p>
 
 
     
@@ -147,16 +153,16 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetyp
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14882669814482.html" 
-          title="Previous Post: webpack入坑记录">&laquo; webpack入坑记录</a>
+          <a href="14930210074983.html" 
+          title="Previous Post: javascript animatio动画事件">&laquo; javascript animatio动画事件</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="14890321432064.html" 
-          title="Next Post: es6学习笔记">es6学习笔记 &raquo;</a>
+          <a  href="14926503124149.html" 
+          title="Next Post: es6入门">es6入门 &raquo;</a>
       
       </p>
         </div>

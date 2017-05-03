@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  woiconBlog
+  HTML5 进阶系列：拖放 API 实现拖放排序 - woiconBlog
   
   </title>
   
@@ -98,23 +98,36 @@
        
 
  <script type="text/javascript">
-	$(function(){
-		$('#menu_item_index').addClass('is_active');
-	});
+  $(function(){
+    $('#menu_item_index').addClass('is_active');
+  });
 </script>
 <div class="row">
-	<div class="large-8 medium-8 columns">
-		<div class="markdown-body home-categories">
-		
-			<div class="article">
-                <a class="clearlink" href="14937786660187.html">
-                
-                  <h1>HTML5 进阶系列：拖放 API 实现拖放排序</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>HTML5 中提供了直接拖放的 API，极大的方便我们实现拖放效果，不需要去写一大堆的 js，只需要通过监听元素的拖放事件就能实现各种拖放功能。</p>
+  <div class="large-8 medium-8 columns">
+      <div class="markdown-body article-wrap">
+       <div class="article">
+          
+          <h1>HTML5 进阶系列：拖放 API 实现拖放排序</h1>
+     
+        <div class="read-more clearfix">
+          <span class="date">2017/5/3</span>
+
+          <span>posted in&nbsp;</span> 
+          
+              <span class="posted-in"><a href='code.html'>code</a></span>
+           
+         
+          <span class="comments">
+            
+
+            
+          </span>
+
+        </div>
+      </div><!-- article -->
+
+      <div class="article-content">
+      <p>HTML5 中提供了直接拖放的 API，极大的方便我们实现拖放效果，不需要去写一大堆的 js，只需要通过监听元素的拖放事件就能实现各种拖放功能。</p>
 
 <p>想要拖放某个元素，必须设置该元素的 draggable 属性为 true，当该属性为 false 时，将不允许拖放。而 img 元素和 a 元素都默认设置了 draggable 属性为 true，可直接拖放，如果不想拖放这两个元素，把属性设为 false 即可。</p>
 
@@ -283,164 +296,40 @@ var iosDragDropShim = { enableEnterLeave: true }
 &lt;script src=&quot;vendor/ios-drag-drop.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/5/3</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14930210074983.html">
-                
-                  <h1>javascript animatio动画事件</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>判断css animatio动画是否完成， animationend是判断css3在动画完成后执行事件。</p>
+    
 
-<pre><code>object.addEventListener(&quot;webkitAnimationEnd&quot;, myScript);  // Chrome, Safari 和 Opera
-object.addEventListener(&quot;animationend&quot;, myScript);        // 标准语法
-</code></pre>
+      </div>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/4/24</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+      <div class="row">
+        <div class="large-6 columns">
+        <p class="text-left" style="padding:15px 0px;">
+      
+        </p>
+        </div>
+        <div class="large-6 columns">
+      <p class="text-right" style="padding:15px 0px;">
+      
+          <a  href="14930210074983.html" 
+          title="Next Post: javascript animatio动画事件">javascript animatio动画事件 &raquo;</a>
+      
+      </p>
+        </div>
+      </div>
+      <div class="comments-wrap">
+        <div class="share-comments">
+          
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14927366229693.html">
-                
-                  <h1>225蓝牙连接问题</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<ol>
-<li>手表关机，关闭手机蓝牙；</li>
-<li>等待五秒后，同时按住B键+C键；</li>
-<li>步骤2按住不放，再按住A键不放，此时同时按住ABC三个键；</li>
-<li>等待几秒, 听到哔一声，放开A键，此时仍同时按住BC两个键</li>
-<li>等待几秒（可能会很长时间，耐心等），听到哔一声，放开C键;</li>
-<li>等待几秒, 听到哔一声， 放开B键；</li>
-<li>成功后会出现第一次开机的情况（显示简体中文字样）， 可以接着把225的各项设置逐一完成；</li>
-<li>把手机Connect APP中注册的225手表先删除；</li>
-<li>手机重新开机，开启蓝牙；</li>
-<li>开启手表225的蓝牙配对，设置&gt;蓝牙&gt;移动设备配对</li>
-<li>开启手机Garmin Connect app，设备&gt; &ldquo;+&rdquo;&gt; 健身 &gt; forerunner 225 &gt;搜寻。</li>
-</ol>
+          
 
-<p>以上做完后, 就会看到手机上出现询问配对码是否正确的对话框，确定之后就会连接、注册且完成同步了。<br/>
-以后只要开启Garmin connect, 按手表的跑步键两次，等待几秒，就会正常同步。</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/4/21</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='shoot.html'>shoot</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14926503124149.html">
-                
-                  <h1>es6入门</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">let和const命令</h2>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/4/20</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='read.html'>read</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-              
+          
+        </div>
+      </div>
+    </div><!-- article-wrap -->
+  </div><!-- large 8 -->
 
 
-			<div class="row">
-			  <div class="large-6 columns">
-			  <p class="text-left" style="padding-top:25px;">
-			   
-			  </p>
-			  </div>
-			  <div class="large-6 columns">
-			<p class="text-right" style="padding-top:25px;">
-			 <a href="all_1.html">&raquo; Next Page</a> 
-			</p>
-			  </div>
-			</div>
-		</div>
-	</div><!-- large 8 -->
+
 
  <div class="large-4 medium-4 columns">
   <div class="hide-for-small">
