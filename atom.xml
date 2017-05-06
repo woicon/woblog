@@ -3,12 +3,22 @@
   <title><![CDATA[woiconBlog]]></title>
   <link href="/atom.xml/atom.xml" rel="self"/>
   <link href="/atom.xml/"/>
-  <updated>2017-05-05T12:42:14+08:00</updated>
+  <updated>2017-05-05T17:00:06+08:00</updated>
   <id>/atom.xml/</id>
   <author>
     <name><![CDATA[]]></name>
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[实现一个日历选择的经历]]></title>
+    <link href="/atom.xml/14939728954326.html"/>
+    <updated>2017-05-05T16:28:15+08:00</updated>
+    <id>/atom.xml/14939728954326.html</id>
+    <content type="html"><![CDATA[
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[HTML5 进阶系列：拖放 API 实现拖放排序]]></title>
@@ -91,21 +101,21 @@
 
 <p>第二个参数为要存入的数据。例如：</p>
 
-<p><code><br/>
-event.dataTransfer.setData(&#39;text/plain&#39;,&#39;Hello World&#39;);<br/>
-getData()<br/>
-</code></p>
+<pre><code>event.dataTransfer.setData(&#39;text/plain&#39;,&#39;Hello World&#39;);
+getData()
+</code></pre>
 
 <p>该方法从 dataTransfer 对象中读取数据。参数为在 setData 中指定的数据种类。例如：</p>
 
-<p><code><br/>
-event.dataTransfer.getData(&#39;text/plain&#39;);<br/>
-clearData()<br/>
-</code></p>
+<pre><code>event.dataTransfer.getData(&#39;text/plain&#39;);
+</code></pre>
+
+<h2 id="toc_6">clearData()</h2>
 
 <p>该方法清除 dataTransfer 对象中存放的数据。参数可选，为数据种类。若参数为空，则清空所有种类的数据。例如：</p>
 
-<h2 id="toc_6">event.dataTransfer.clearData();</h2>
+<pre><code>event.dataTransfer.clearData();
+</code></pre>
 
 <h2 id="toc_7">setDragImage()</h2>
 
