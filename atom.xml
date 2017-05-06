@@ -3,22 +3,12 @@
   <title><![CDATA[woiconBlog]]></title>
   <link href="/atom.xml/atom.xml" rel="self"/>
   <link href="/atom.xml/"/>
-  <updated>2017-05-05T17:00:06+08:00</updated>
+  <updated>2017-05-06T10:24:28+08:00</updated>
   <id>/atom.xml/</id>
   <author>
     <name><![CDATA[]]></name>
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
-  
-  <entry>
-    <title type="html"><![CDATA[实现一个日历选择的经历]]></title>
-    <link href="/atom.xml/14939728954326.html"/>
-    <updated>2017-05-05T16:28:15+08:00</updated>
-    <id>/atom.xml/14939728954326.html</id>
-    <content type="html"><![CDATA[
-
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[HTML5 进阶系列：拖放 API 实现拖放排序]]></title>
