@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="renderer" content="webkit" />
-	<title>woiconBlog</title>
+	<title>WOBLOG</title>
 	
 	
-	<link href="atom.xml" rel="alternate" title="woiconBlog" type="application/atom+xml">
+	<link href="atom.xml" rel="alternate" title="WOBLOG" type="application/atom+xml">
 	<link rel="stylesheet" href="asset/css/style.css" />
 	<script src="asset/js/vendor/jquery.js"></script>
 	<script src="asset/highlightjs/highlight.pack.js"></script>
@@ -16,16 +16,20 @@
 	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
-<div class="nav">
-    <ul>
-    
-    	<li id=""><a target="_self" href="index.html">Home</a></li>
-    
-    	<li id=""><a target="_self" href="archives.html">Archives</a></li>
-    
-    	<li id="aboutpage"><a target="_blank" href="aboutme.html">about</a></li>
-    
-    </ul>
+<div class="header">
+	<div class="container">
+		<h1><a href="index.html">WOBLOG</a></h1>
+		<p class="subtitle">写写代码·做做设计</p>
+	    <ul class="nav">
+	    
+	    	<li id=""><a target="_self" href="index.html">Home</a></li>
+	    
+	    	<li id=""><a target="_self" href="archives.html">Archives</a></li>
+	    
+	    	<li id="aboutpage"><a target="_blank" href="aboutme.html">about</a></li>
+	    
+	    </ul>
+	</div>
 </div> <script type="text/javascript">
 	$(function(){
 		$('#menu_item_index').addClass('is_active');
@@ -35,110 +39,6 @@
 	<div class="pagecontent">
 		<div class="markdownbody">
 		
-			<div class="article">
-                <a class="clearlink" href="14901536948215.html">
-                
-                  <h1>设计模式开发实践</h1>
-                  
-                   <div class="readmore">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/3/22</span>
-                    <span>分类：&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-                
-                
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	
-                        
-                      </div>
-                  </div>
-                </a>
-               
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14889572496788.html">
-                
-                  <h1>WOUI的CSS的编写规范</h1>
-                  
-                   <div class="readmore">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/3/8</span>
-                    <span>分类：&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='code.html'>code</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-                
-                
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h3 id="toc_0">写在前面</h3>
-
-<p>所有的CSS语法是不区分大小写的ASCII范围（即，i.e., [a-z] and [A-Z]是等价的）中，除了部分不属于CSS的控制之下。例如，在HTML中值的区分大小写属性“ID”的字体名称和“class”，和URI就在于本规范的范围之内。请特别注意，元素名称是不区分大小写的HTML，但区分大小写的XML。</p>
-
-<h3 id="toc_1">使用less预编译提高效率</h3>
-
-<p>层级深度不超过三级。</p>
-
-<h2 id="toc_2">书写规则</h2>
-
-<h3 id="toc_3">class命名</h3>
-
-<p>class 名称中只能出现小写字符和连字符（不是下划线，也不是驼峰命名法）。连字符应当用于相关 class 的命名（类似于命名空间）（例如，.btn 和 .btn-danger）。<br/>
-避免过度任意的简写。.btn 代表 button，但是 .s 不能表达任何意思。<br/>
-class 名称应当尽可能短，并且意义明确。<br/>
-使用有意义的名称。使用有组织的或目的明确的名称，不要使用表现形式（presentational）的名称。<br/>
-基于最近的父 class 或基本（base） class 作为新 class 的前缀。<br/>
-使用 .js-* class 来标识行为（与样式相对），并且不要将这些 class 包含到 CSS 文件中。</p>
-
-<h3 id="toc_4">避免过深的层级</h3>
-
-<h3 id="toc_5">CSS属性书写顺序</h3>
-
-<p>1.位置属性(position, top, right, z-index, display, float等)<br/>
-2.大小(width, height, padding, margin)<br/>
-3.文字系列(font, line-height, letter-spacing, color- text-align等)<br/>
-4.背景(background, border等)<br/>
-5.其他(animation, transition等)</p>
-
-<h3 id="toc_6">使用缩写</h3>
-
-<p>CSS有些属性是可以缩写的，比如padding,margin,font等等，这样精简代码同时又能提高用户的阅读体验。</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-               
-              </div><!-- article -->
-        
 			<div class="article">
                 <a class="clearlink" href="14882775961284.html">
                 
@@ -215,6 +115,139 @@ class 名称应当尽可能短，并且意义明确。<br/>
 <p>模块在node.js中的概念很简单，看看如何创建一个我们自己的模块供开发复用。</p>
 
 <p>在node.js中创建模块非常简单，一个文件就是一个模块，所以我们创建一个test.js文件就创建了一个模块</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+               
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14882669814482.html">
+                
+                  <h1>webpack入坑记录</h1>
+                  
+                   <div class="readmore">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/2/28</span>
+                    <span>分类：&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='code.html'>code</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+                
+                
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>Webpack 会分析入口文件，解析包含依赖关系的各个文件。这些文件（模块）都打包到 bundle.js 。Webpack 会给每个模块分配一个唯一的 id 并通过这个 id 索引和访问模块。在页面启动时，会先执行 entry.js 中的代码，其它模块会在运行 require 的时候再执行。</p>
+
+<h3 id="toc_0">Loader</h3>
+
+<p>Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件，就需要使用 loader 进行转换。</p>
+
+<p>Loader 可以理解为是模块和资源的转换器，它本身是一个函数，接受源文件作为参数，返回转换的结果。这样，我们就可以通过 require 来加载任何类型的模块或文件，比如 CoffeeScript、 JSX、 LESS 或图片。</p>
+
+<p><strong>loader 有哪些特性？</strong><br/>
+Loader 可以通过管道方式链式调用，每个 loader 可以把资源转换成任意格式并传递给下一个 loader ，但是最后一个 loader 必须返回 JavaScript。<br/>
+Loader 可以同步或异步执行。<br/>
+Loader 运行在 node.js 环境中，所以可以做任何可能的事情。<br/>
+Loader 可以接受参数，以此来传递配置项给 loader。<br/>
+Loader 可以通过文件扩展名（或正则表达式）绑定给不同类型的文件。<br/>
+Loader 可以通过 npm 发布和安装。<br/>
+除了通过 package.json 的 main 指定，通常的模块也可以导出一个 loader 来使用。<br/>
+Loader 可以访问配置。<br/>
+插件可以让 loader 拥有更多特性。<br/>
+Loader 可以分发出附加的任意文件。<br/>
+Loader 本身也是运行在 node.js 环境中的 JavaScript 模块，它通常会返回一个函数。大多数情况下，我们通过 npm 来管理 loader，但是你也可以在项目中自己写 loader 模块。<br/>
+Loader 可以在 require() 引用模块的时候添加，也可以在 webpack 全局配置中进行绑定，还可以通过命令行的方式使用。</p>
+
+<h3 id="toc_1">配置文件</h3>
+
+<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 &ndash;config 选项来指定配置文件。</p>
+
+<pre><code class="language-{">  &quot;name&quot;: &quot;webpack-example&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;A simple webpack example.&quot;,
+  &quot;main&quot;: &quot;bundle.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  },
+  &quot;keywords&quot;: [
+    &quot;webpack&quot;
+  ],
+  &quot;author&quot;: &quot;zhaoda&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;devDependencies&quot;: {
+    &quot;css-loader&quot;: &quot;^0.21.0&quot;,
+    &quot;style-loader&quot;: &quot;^0.13.0&quot;,
+    &quot;webpack&quot;: &quot;^1.12.2&quot;
+  }
+}
+</code></pre>
+
+<h3 id="toc_2">commonJS规范</h3>
+
+<p>CommonJS规范包括了模块（modules）、包（packages）、系统（system）、二进制（binary）、控制台（console）、编码（encodings）、文件系统（filesystems）、套接字（sockets）、单元测试（unit testing）等部分。目前大部分标准都在拟定和讨论之中，已经发布的标准有Modules/1.0、Modules/1.1、Modules/1.1.1、Packages/1.0、System/1.0。</p>
+
+<h3 id="toc_3">AMD规范</h3>
+
+                        
+                      </div>
+                  </div>
+                </a>
+               
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14882669616759.html">
+                
+                  <h1>微信小程序中使用字体图标</h1>
+                  
+                   <div class="readmore">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/2/28</span>
+                    <span>分类：&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='code.html'>code</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+                
+                
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>最近在做小程序方面的工作,小程序icon组件图标很少,又不想使用css背景图或者直接引入imgage,直接@font-face .ttf .woff字体，会有跨域问题。写到页面里吧。</p>
+
+<p>只能转base64了吧，而且纯手工转，icomoon Encode embed css不知道从什么时候起已经开始收费了😭<br/>
+在线转换网址：<a href="https://www.giftofspeed.com/base64-encoder/">https://www.giftofspeed.com/base64-encoder/</a></p>
+
+<pre><code class="language-@font-face">font-family:&#39;font-name&#39;;
+src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetype&#39;);
+</code></pre>
+
+<p>在小程序内就不存在字体格式兼容性问题，用ttf就行了。</p>
 
                         
                       </div>
