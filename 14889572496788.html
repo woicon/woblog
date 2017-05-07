@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="renderer" content="webkit" />
 	<title>WOUI的CSS的编写规范 - WOBLOG</title>
-	
-	
 	<link href="atom.xml" rel="alternate" title="WOBLOG" type="application/atom+xml">
 	<link rel="stylesheet" href="asset/css/style.css" />
 	<script src="asset/js/vendor/jquery.js"></script>
@@ -16,17 +14,18 @@
 	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
+	<div class="loading">加载中</div>
 <div class="header">
 	<div class="container">
 		<h1><a href="index.html">WOBLOG</a></h1>
 		<p class="subtitle">写写代码·做做设计</p>
 	    <ul class="nav">
 	    
-	    	<li id=""><a target="_self" href="index.html">Home</a></li>
+	    	<li id=""><a target="_self" href="index.html">首页</a></li>
 	    
-	    	<li id=""><a target="_self" href="archives.html">Archives</a></li>
+	    	<li id=""><a target="_self" href="archives.html">归档</a></li>
 	    
-	    	<li id="aboutpage"><a target="_blank" href="aboutme.html">about</a></li>
+	    	<li id="aboutpage"><a target="_blank" href="aboutme.html">关于</a></li>
 	    
 	    </ul>
 	</div>
@@ -57,38 +56,38 @@
         </div>
       </div><!-- article -->
       <div class="article-content">
-      <h2 id="toc_0">写在前面</h2>
+      <h2 id="toc_0">一、写在前面</h2>
 
 <p>所有的CSS语法是不区分大小写的ASCII范围（即，i.e., [a-z] and [A-Z]是等价的）中，除了部分不属于CSS的控制之下。例如，在HTML中值的区分大小写属性“ID”的字体名称和“class”，和URI就在于本规范的范围之内。请特别注意，元素名称是不区分大小写的HTML，但区分大小写的XML。</p>
 
-<h2 id="toc_1">使用less预编译提高效率</h2>
+<h2 id="toc_1">二、使用预编译提高效率</h2>
 
-<p>层级深度不超过三级。</p>
+<p>选择使用less做预编译处理，同时编写一部分mix库来提高编写效率。<br/>
+mix库请参考<br/>
+http://</p>
 
-<h2 id="toc_2">书写规则</h2>
+<h2 id="toc_2">三、书写规则</h2>
 
-<h2 id="toc_3">class命名</h2>
-
-<p>class 名称中只能出现小写字符和连字符（不是下划线，也不是驼峰命名法）。连字符应当用于相关 class 的命名（类似于命名空间）（例如，.btn 和 .btn-danger）。<br/>
+<p><strong>class命名</strong><br/>
+class 名称中只能出现小写字符和连字符（不是下划线，也不是驼峰命名法）。连字符应当用于相关 class 的命名（类似于命名空间）（例如，.btn 和 .btn-danger）。<br/>
 避免过度任意的简写。.btn 代表 button，但是 .s 不能表达任何意思。<br/>
 class 名称应当尽可能短，并且意义明确。<br/>
 使用有意义的名称。使用有组织的或目的明确的名称，不要使用表现形式（presentational）的名称。<br/>
 基于最近的父 class 或基本（base） class 作为新 class 的前缀。<br/>
 使用 .js-* class 来标识行为（与样式相对），并且不要将这些 class 包含到 CSS 文件中。</p>
 
-<h2 id="toc_4">避免过深的层级</h2>
+<p><strong>避免过深的层级</strong><br/>
+为了提高解析效率，css样式层级深度不超过三级。</p>
 
-<h2 id="toc_5">CSS属性书写顺序</h2>
-
-<p>1.位置属性(position, top, right, z-index, display, float等)<br/>
+<p><strong>CSS属性书写顺序</strong><br/>
+1.位置属性(position, top, right, z-index, display, float等)<br/>
 2.大小(width, height, padding, margin)<br/>
 3.文字系列(font, line-height, letter-spacing, color- text-align等)<br/>
 4.背景(background, border等)<br/>
 5.其他(animation, transition等)</p>
 
-<h2 id="toc_6">使用缩写</h2>
-
-<p>CSS有些属性是可以缩写的，比如padding,margin,font等等，这样精简代码同时又能提高用户的阅读体验。</p>
+<p><strong>使用缩写</strong><br/>
+CSS有些属性是可以缩写的，比如padding,margin,font等等，这样精简代码同时又能提高用户的阅读体验。</p>
 
       </div>
 	<div class="pagebar">
@@ -130,6 +129,11 @@ class 名称应当尽可能短，并且意义明确。<br/>
 <div class="footer"><p class="copyright">Copyright &copy; 2017
 Powered by <a target="_blank" href="http://www.woicon.com">woicon.com</a></p>
 </div>
+<script>
+	$(document).ready(function(){
+		$('.loading').remove();
+	});
+</script>
   
 
 
