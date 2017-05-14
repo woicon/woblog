@@ -280,7 +280,7 @@ else{
 }
 </code></pre>
 
-<p>测试这个方法的代码如下：wait(5000).then(function(){alert(&lsquo;hello&rsquo;)})，这段代码很简单，就是等待5秒以后执行一个回调，弹出一个消息。当然，你还可以这样写：</p>
+<p>测试这个方法的代码如下：wait(5000).then(function(){alert(&#39;hello&#39;)})，这段代码很简单，就是等待5秒以后执行一个回调，弹出一个消息。当然，你还可以这样写：</p>
 
 <pre><code class="language-wait(5000).then(function(){alert(&#39;hello&#39;)}).then(function(){console.log(&#39;world&#39;)})"></code></pre>
 
@@ -642,6 +642,94 @@ person1.makeSound(); // 喵喵喵
     }
 }  
 </code></pre>
+
+                        
+                      </div>
+                  </div>
+                </a>
+               
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="javascript%E7%9A%84%E6%97%B6%E9%97%B4%E6%88%B3%E8%BD%AC%E6%8D%A2.html">
+                
+                  <h1>javascript的时间戳转换</h1>
+                  
+                   <div class="readmore">
+                  <div class="more-left left">
+                  
+                    <span class="date">2014/6/15</span>
+                    <span>分类：&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='code.html'>code</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+                
+                
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">一、将时间转换为时间戳</h2>
+
+<pre><code>var timestamp1 = Date.parse(new Date());
+var timestamp2 = (new Date()).valueOf();
+var timestamp3 = new Date().getTime();
+</code></pre>
+
+<blockquote>
+<p><strong>运行结果：</strong></p>
+</blockquote>
+
+<div id="nowtime"></div>
+
+<div id="time"></div>
+
+<script>
+var timestamp1 = Date.parse(new Date());
+var timestamp2 = (new Date()).valueOf();
+var timestamp3 = new Date().getTime();
+
+    var timestamp3 = new Date().getTime();
+    var time = document.getElementById('time'),
+        nowtime = document.getElementById('nowtime');
+    var settime = new Date();
+    nowtime.innerHTML='当前时间为：'+ settime;
+    time.innerHTML='获取的时间为：'+'<br>1:'+timestamp1+'<br>2:'+timestamp2+'<br>3:'+timestamp3;
+</script>
+
+<h2 id="toc_1">二、将时间戳转换为格式化时间</h2>
+
+<p><strong>1.Date toLocaleString方法</strong></p>
+
+<pre><code>function getLocalTime(nS) {  
+ return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,&#39; &#39;);  
+}
+</code></pre>
+
+<blockquote>
+<p><strong>运行结果：</strong></p>
+</blockquote>
+
+<div id="localtime"></div>
+
+<script>
+var newdate= Date.parse(new Date());
+function getLocalTime(nS) {  
+ return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');  
+}
+var localtimes = getLocalTime(newdate);
+var localtime = document.getElementById('localtime');
+localtime.innerHTML = localtimes;
+</script>
 
                         
                       </div>

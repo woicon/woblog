@@ -3,7 +3,7 @@
   <title><![CDATA[WOBLOG]]></title>
   <link href="/atom.xml/atom.xml" rel="self"/>
   <link href="/atom.xml/"/>
-  <updated>2017-05-07T12:45:42+08:00</updated>
+  <updated>2017-05-14T11:18:59+08:00</updated>
   <id>/atom.xml/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -222,7 +222,7 @@ object.addEventListener(&quot;animationend&quot;, myScript);        // 标准语
 8. 把手机Connect APP中注册的225手表先删除；<br/>
 9. 手机重新开机，开启蓝牙；<br/>
 10. 开启手表225的蓝牙配对，设置&gt;蓝牙&gt;移动设备配对<br/>
-11. 开启手机Garmin Connect app，设备&gt; &ldquo;+&rdquo;&gt; 健身 &gt; forerunner 225 &gt;搜寻。</p>
+11. 开启手机Garmin Connect app，设备&gt; &quot;+&quot;&gt; 健身 &gt; forerunner 225 &gt;搜寻。</p>
 
 <p>以上做完后, 就会看到手机上出现询问配对码是否正确的对话框，确定之后就会连接、注册且完成同步了。<br/>
 以后只要开启Garmin connect, 按手表的跑步键两次，等待几秒，就会正常同步。</p>
@@ -268,16 +268,6 @@ class 名称应当尽可能短，并且意义明确。<br/>
 
 <p><strong>使用缩写</strong><br/>
 CSS有些属性是可以缩写的，比如padding,margin,font等等，这样精简代码同时又能提高用户的阅读体验。</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[阿米巴经营]]></title>
-    <link href="/atom.xml/14882775961284.html"/>
-    <updated>2017-02-28T18:26:36+08:00</updated>
-    <id>/atom.xml/14882775961284.html</id>
-    <content type="html"><![CDATA[
 
 ]]></content>
   </entry>
@@ -334,7 +324,7 @@ Loader 可以在 require() 引用模块的时候添加，也可以在 webpack �
 
 <h3 id="toc_1">配置文件</h3>
 
-<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 &ndash;config 选项来指定配置文件。</p>
+<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 --config 选项来指定配置文件。</p>
 
 <pre><code class="language-{">  &quot;name&quot;: &quot;webpack-example&quot;,
   &quot;version&quot;: &quot;1.0.0&quot;,
@@ -413,6 +403,8 @@ src:url(data:application/x-font-ttf;charset=utf-8;base64,*** format(&#39;truetyp
     <id>/atom.xml/14890321432064.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">class类</h2>
+
+<p>关于</p>
 
 <h2 id="toc_1">let变量</h2>
 
@@ -649,7 +641,7 @@ else{
 }
 </code></pre>
 
-<p>测试这个方法的代码如下：wait(5000).then(function(){alert(&lsquo;hello&rsquo;)})，这段代码很简单，就是等待5秒以后执行一个回调，弹出一个消息。当然，你还可以这样写：</p>
+<p>测试这个方法的代码如下：wait(5000).then(function(){alert(&#39;hello&#39;)})，这段代码很简单，就是等待5秒以后执行一个回调，弹出一个消息。当然，你还可以这样写：</p>
 
 <pre><code class="language-wait(5000).then(function(){alert(&#39;hello&#39;)}).then(function(){console.log(&#39;world&#39;)})"></code></pre>
 
@@ -959,6 +951,68 @@ person1.makeSound(); // 喵喵喵
     }
 }  
 </code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[javascript的时间戳转换]]></title>
+    <link href="/atom.xml/javascript%E7%9A%84%E6%97%B6%E9%97%B4%E6%88%B3%E8%BD%AC%E6%8D%A2.html"/>
+    <updated>2017-05-14T10:41:57+08:00</updated>
+    <id>/atom.xml/javascript%E7%9A%84%E6%97%B6%E9%97%B4%E6%88%B3%E8%BD%AC%E6%8D%A2.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">一、将时间转换为时间戳</h2>
+
+<pre><code>var timestamp1 = Date.parse(new Date());
+var timestamp2 = (new Date()).valueOf();
+var timestamp3 = new Date().getTime();
+</code></pre>
+
+<blockquote>
+<p><strong>运行结果：</strong></p>
+</blockquote>
+
+<div id="nowtime"></div>
+
+<div id="time"></div>
+
+<script>
+var timestamp1 = Date.parse(new Date());
+var timestamp2 = (new Date()).valueOf();
+var timestamp3 = new Date().getTime();
+
+    var timestamp3 = new Date().getTime();
+    var time = document.getElementById('time'),
+        nowtime = document.getElementById('nowtime');
+    var settime = new Date();
+    nowtime.innerHTML='当前时间为：'+ settime;
+    time.innerHTML='获取的时间为：'+'<br>1:'+timestamp1+'<br>2:'+timestamp2+'<br>3:'+timestamp3;
+</script>
+
+<h2 id="toc_1">二、将时间戳转换为格式化时间</h2>
+
+<p><strong>1.Date toLocaleString方法</strong></p>
+
+<pre><code>function getLocalTime(nS) {  
+ return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,&#39; &#39;);  
+}
+</code></pre>
+
+<blockquote>
+<p><strong>运行结果：</strong></p>
+</blockquote>
+
+<div id="localtime"></div>
+
+<script>
+var newdate= Date.parse(new Date());
+function getLocalTime(nS) {  
+ return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');  
+}
+var localtimes = getLocalTime(newdate);
+var localtime = document.getElementById('localtime');
+localtime.innerHTML = localtimes;
+</script>
 
 ]]></content>
   </entry>

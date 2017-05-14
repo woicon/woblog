@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="renderer" content="webkit" />
-	<title>es6学习笔记 - WOBLOG</title>
+	<title>javascript的时间戳转换 - WOBLOG</title>
 	<link href="atom.xml" rel="alternate" title="WOBLOG" type="application/atom+xml">
 	<link rel="stylesheet" href="asset/css/style.css" />
 	<script src="asset/js/vendor/jquery.js"></script>
@@ -39,9 +39,9 @@
       <div class="article-wrap">
        <div class="article">
           
-          <h1>es6学习笔记</h1>
+          <h1>javascript的时间戳转换</h1>
         <div class="readmore">
-          <span class="date">2016/4/9</span>
+          <span class="date">2014/6/15</span>
 
           <span>分类 &nbsp;</span> 
           
@@ -56,19 +56,64 @@
         </div>
       </div><!-- article -->
       <div class="article-content">
-      <h2 id="toc_0">class类</h2>
+      <h2 id="toc_0">一、将时间转换为时间戳</h2>
 
-<p>关于</p>
+<pre><code>var timestamp1 = Date.parse(new Date());
+var timestamp2 = (new Date()).valueOf();
+var timestamp3 = new Date().getTime();
+</code></pre>
 
-<h2 id="toc_1">let变量</h2>
+<blockquote>
+<p><strong>运行结果：</strong></p>
+</blockquote>
+
+<div id="nowtime"></div>
+
+<div id="time"></div>
+
+<script>
+var timestamp1 = Date.parse(new Date());
+var timestamp2 = (new Date()).valueOf();
+var timestamp3 = new Date().getTime();
+
+    var timestamp3 = new Date().getTime();
+    var time = document.getElementById('time'),
+        nowtime = document.getElementById('nowtime');
+    var settime = new Date();
+    nowtime.innerHTML='当前时间为：'+ settime;
+    time.innerHTML='获取的时间为：'+'<br>1:'+timestamp1+'<br>2:'+timestamp2+'<br>3:'+timestamp3;
+</script>
+
+<h2 id="toc_1">二、将时间戳转换为格式化时间</h2>
+
+<p><strong>1.Date toLocaleString方法</strong></p>
+
+<pre><code>function getLocalTime(nS) {  
+ return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,&#39; &#39;);  
+}
+</code></pre>
+
+<blockquote>
+<p><strong>运行结果：</strong></p>
+</blockquote>
+
+<div id="localtime"></div>
+
+<script>
+var newdate= Date.parse(new Date());
+function getLocalTime(nS) {  
+ return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');  
+}
+var localtimes = getLocalTime(newdate);
+var localtime = document.getElementById('localtime');
+localtime.innerHTML = localtimes;
+</script>
 
       </div>
 	<div class="pagebar">
 	
-	<a href="14926503124149.html" title="分类: es6入门">&laquo; es6入门</a>
+	<a href="14937985253928.html" title="分类: question一些问题记录">&laquo; question一些问题记录</a>
 	
-	
-	<a  href="14891384503601.html" title="Http权威指南">Http权威指南 &raquo;</a>
 	
 	</div>
 	      <div class="comments-wrap">
