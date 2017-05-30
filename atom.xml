@@ -3,7 +3,7 @@
   <title><![CDATA[WOBLOG]]></title>
   <link href="/atom.xml/atom.xml" rel="self"/>
   <link href="/atom.xml/"/>
-  <updated>2017-05-21T16:27:03+08:00</updated>
+  <updated>2017-05-30T18:21:59+08:00</updated>
   <id>/atom.xml/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -201,6 +201,9 @@ var iosDragDropShim = { enableEnterLeave: true }
 <pre><code>object.addEventListener(&quot;webkitAnimationEnd&quot;, myScript);  // Chrome, Safari 和 Opera
 object.addEventListener(&quot;animationend&quot;, myScript);        // 标准语法
 </code></pre>
+
+<p>demo<br/>
+<div style="color:#ff0000;transform:rotate(45deg);transition: .5s;display:inline-block">hello</div></p>
 
 ]]></content>
   </entry>
